@@ -1,0 +1,3862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>R. Janaga Priya | MCA | HR & Technology</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+
+:root{
+
+    --bg:#02040a;
+    --bg2:#070b16;
+
+    --card:#0a1020;
+    --card2:#0d1427;
+
+    --white:#f6f8ff;
+    --text:#d8deeb;
+    --muted:#8e9ab0;
+
+    --cyan:#00eaff;
+    --blue:#367cff;
+    --violet:#874cff;
+    --pink:#e14cff;
+
+    --line:rgba(255,255,255,.09);
+
+    --font-main:"DM Sans",sans-serif;
+    --font-title:"Space Grotesk",sans-serif;
+    --font-tech:"Orbitron",sans-serif;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(0,234,255,.10),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 90% 15%,
+        rgba(135,76,255,.12),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 50% 80%,
+        rgba(225,76,255,.06),
+        transparent 30%
+    ),
+
+    var(--bg);
+
+    color:var(--white);
+
+    font-family:var(--font-main);
+
+    overflow-x:hidden;
+}
+
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+        rgba(255,255,255,.022) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.022) 1px,
+        transparent 1px
+    );
+
+    background-size:55px 55px;
+
+    pointer-events:none;
+
+    z-index:-2;
+}
+
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+.container{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+}
+
+
+::-webkit-scrollbar{
+    width:7px;
+}
+
+::-webkit-scrollbar-track{
+    background:#02030a;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        var(--cyan),
+        var(--violet)
+    );
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(2,4,10,.78);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--line);
+}
+
+
+.nav-inner{
+
+    min-height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+
+.brand{
+
+    font-family:var(--font-tech);
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    color:var(--cyan);
+
+    text-shadow:
+        0 0 8px var(--cyan),
+        0 0 25px rgba(0,234,255,.4);
+
+    white-space:nowrap;
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+    list-style:none;
+}
+
+
+.nav-links a{
+
+    font-family:var(--font-title);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    color:#dce3f0;
+
+    position:relative;
+
+    letter-spacing:.4px;
+
+    transition:.3s;
+}
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-9px;
+
+    width:0;
+
+    height:2px;
+
+    transform:translateX(-50%);
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--violet)
+    );
+
+    box-shadow:0 0 10px var(--cyan);
+
+    transition:.3s;
+}
+
+
+.nav-links a:hover{
+
+    color:white;
+
+    text-shadow:
+        0 0 10px var(--cyan);
+}
+
+
+.nav-links a:hover::after{
+
+    width:100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:125px;
+
+    display:grid;
+
+    grid-template-columns:1.12fr .88fr;
+
+    align-items:center;
+
+    gap:70px;
+}
+
+
+.hero-small{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    margin-bottom:22px;
+}
+
+
+/* NAME — SAME LINE */
+
+.hero h1{
+
+    font-family:var(--font-title);
+
+    font-size:clamp(45px,6vw,78px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    white-space:nowrap;
+}
+
+
+.hero h1 span{
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--cyan),
+        #ffffff,
+        var(--violet),
+        var(--pink),
+        var(--cyan)
+    );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:nameGlow 5s linear infinite;
+
+}
+
+
+@keyframes nameGlow{
+
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:300% center;
+    }
+
+}
+
+
+/* =========================================================
+   QUOTE MARQUEE
+========================================================= */
+
+.name-marquee{
+
+    width:100%;
+
+    overflow:hidden;
+
+    margin-top:25px;
+
+    padding:13px 0;
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+}
+
+
+.marquee-track{
+
+    width:max-content;
+
+    display:flex;
+
+    animation:quoteMove 20s linear infinite;
+}
+
+
+.marquee-track span{
+
+    font-family:var(--font-tech);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:#9da9bd;
+
+    margin-right:90px;
+
+    white-space:nowrap;
+}
+
+
+.marquee-track strong{
+
+    color:var(--cyan);
+
+    text-shadow:0 0 10px rgba(0,234,255,.4);
+}
+
+
+@keyframes quoteMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-description{
+
+    max-width:650px;
+
+    color:var(--muted);
+
+    line-height:1.85;
+
+    margin:27px 0;
+
+    font-size:16px;
+}
+
+
+.hero-description strong{
+
+    color:#ffffff;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+}
+
+
+.btn{
+
+    padding:13px 21px;
+
+    border-radius:8px;
+
+    border:1px solid rgba(0,234,255,.35);
+
+    font-family:var(--font-title);
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.35s;
+}
+
+
+.btn-primary{
+
+    border:none;
+
+    background:
+    linear-gradient(
+        100deg,
+        var(--blue),
+        var(--violet),
+        var(--pink)
+    );
+
+    box-shadow:
+        0 0 20px rgba(135,76,255,.25);
+}
+
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--cyan);
+
+    box-shadow:
+
+        0 0 15px rgba(0,234,255,.25),
+
+        0 0 35px rgba(135,76,255,.15);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-area{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    position:relative;
+    min-width:0;
+}
+
+.profile-card{
+    width:370px;
+    height:480px;
+    border:1px solid rgba(0,234,255,.32);
+    border-radius:25px;
+    background:linear-gradient(145deg,rgba(13,23,43,.95),rgba(4,7,15,.98));
+    position:relative;
+    overflow:hidden;
+    transition:.45s;
+    box-shadow:0 0 30px rgba(0,234,255,.07),inset 0 0 45px rgba(135,76,255,.04);
+    flex:0 0 auto;
+}
+
+.profile-card::before{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    background:var(--cyan);
+    filter:blur(100px);
+    opacity:.12;
+    top:-100px;
+    right:-80px;
+}
+
+.profile-card::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:var(--violet);
+    filter:blur(100px);
+    opacity:.10;
+    bottom:-80px;
+    left:-70px;
+}
+
+.profile-card:hover{
+    transform:translateY(-10px) rotateX(2deg) rotateY(-2deg);
+    border-color:var(--cyan);
+    box-shadow:0 0 25px rgba(0,234,255,.2),0 0 70px rgba(135,76,255,.14);
+}
+
+.profile-backdrop{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:#ffffff;
+    left:50%;
+    top:65px;
+    transform:translateX(-50%);
+    z-index:1;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.profile-image{
+    position:absolute;
+    width:320px;
+    height:385px;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    z-index:2;
+    pointer-events:none;
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+    object-position:center bottom;
+    background:transparent;
+    border:0;
+    border-radius:0;
+}
+
+@keyframes profileFloat{
+    0%,100%{transform:translateX(-50%) translateY(0);}
+    50%{transform:translateX(-50%) translateY(-8px);}
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+
+    padding:105px 0;
+}
+
+
+.section-heading{
+
+    margin-bottom:45px;
+}
+
+
+.section-number{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+}
+
+
+.section-heading h2{
+
+    font-family:var(--font-title);
+
+    font-size:43px;
+
+    letter-spacing:-2px;
+}
+
+
+.section-heading p{
+
+    color:var(--muted);
+
+    margin-top:11px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.glass-card{
+
+    padding:30px;
+
+    border:1px solid var(--line);
+
+    border-radius:16px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(12,20,38,.92),
+        rgba(5,8,16,.96)
+    );
+
+    transition:.4s;
+}
+
+
+.glass-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(0,234,255,.38);
+
+    box-shadow:
+
+        0 0 25px rgba(0,234,255,.08),
+
+        inset 0 0 30px rgba(135,76,255,.03);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    gap:25px;
+}
+
+
+.about-text{
+
+    color:#b6c0d1;
+
+    line-height:1.9;
+
+    text-align:justify;
+
+    font-size:15px;
+}
+
+
+.about-text strong{
+
+    color:white;
+}
+
+
+.focus-list{
+
+    display:grid;
+
+    gap:12px;
+}
+
+
+.focus-item{
+
+    padding:15px;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+
+.focus-item:hover{
+
+    border-color:var(--cyan);
+
+    box-shadow:0 0 15px rgba(0,234,255,.1);
+}
+
+
+.focus-item span{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:8px;
+
+    letter-spacing:1px;
+}
+
+
+.focus-item h4{
+
+    margin-top:6px;
+
+    font-family:var(--font-title);
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.timeline{
+
+    max-width:900px;
+
+    position:relative;
+}
+
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:18px;
+
+    top:0;
+
+    bottom:0;
+
+    width:1px;
+
+    background:
+
+    linear-gradient(
+        var(--cyan),
+        var(--violet),
+        var(--pink),
+        transparent
+    );
+}
+
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:65px;
+
+    margin-bottom:28px;
+}
+
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:9px;
+
+    top:21px;
+
+    width:19px;
+
+    height:19px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    border:4px solid var(--bg);
+
+    box-shadow:
+
+        0 0 10px var(--cyan),
+
+        0 0 25px rgba(0,234,255,.4);
+}
+
+
+.timeline-card{
+
+    padding:24px;
+
+    border:1px solid var(--line);
+
+    border-radius:15px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(11,18,34,.92),
+        rgba(5,8,15,.97)
+    );
+
+    transition:.4s;
+}
+
+
+.timeline-card:hover{
+
+    transform:translateX(9px);
+
+    border-color:var(--cyan);
+
+    box-shadow:
+
+        0 0 20px rgba(0,234,255,.13),
+
+        0 0 40px rgba(135,76,255,.06);
+}
+
+
+.timeline-year{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+}
+
+
+.timeline-card h3{
+
+    margin:8px 0;
+
+    font-family:var(--font-title);
+
+    font-size:20px;
+}
+
+
+.timeline-card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   INTERNSHIP
+========================================================= */
+
+.internship-card{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.internship-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+
+.internship-title h3{
+
+    font-family:var(--font-title);
+
+    font-size:26px;
+}
+
+
+.internship-title p{
+
+    color:var(--cyan);
+
+    margin-top:5px;
+}
+
+
+.internship-badge{
+
+    color:#00ff9d;
+
+    border:1px solid rgba(0,255,157,.3);
+
+    padding:8px 12px;
+
+    border-radius:30px;
+
+    font-family:var(--font-tech);
+
+    font-size:8px;
+
+    white-space:nowrap;
+}
+
+
+.internship-description{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin:24px 0;
+}
+
+
+.tech-row{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+}
+
+
+.tech-pill{
+
+    padding:7px 12px;
+
+    border-radius:30px;
+
+    background:rgba(0,234,255,.045);
+
+    border:1px solid rgba(0,234,255,.14);
+
+    color:#c9d4e5;
+
+    font-size:11px;
+
+    transition:.3s;
+}
+
+
+.tech-pill:hover{
+
+    border-color:var(--cyan);
+
+    color:white;
+
+    box-shadow:0 0 13px rgba(0,234,255,.13);
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-layout{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+
+.skill-group h3{
+
+    font-family:var(--font-title);
+
+    font-size:19px;
+
+    margin-bottom:20px;
+}
+
+
+.skill-cloud{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+
+.skill{
+
+    padding:11px 15px;
+
+    border-radius:8px;
+
+    background:#080d19;
+
+    border:1px solid var(--line);
+
+    font-family:var(--font-title);
+
+    font-size:12px;
+
+    transition:.35s;
+}
+
+
+.skill:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    border-color:var(--cyan);
+
+    box-shadow:
+
+        0 0 13px rgba(0,234,255,.16),
+
+        0 0 25px rgba(135,76,255,.06);
+}
+
+
+.skill.tech::before{
+
+    content:"# ";
+
+    color:var(--cyan);
+}
+
+
+.skill.hr::before{
+
+    content:"✦ ";
+
+    color:var(--violet);
+}
+
+
+.skill.tool::before{
+
+    content:"◈ ";
+
+    color:var(--pink);
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:23px;
+}
+
+
+.project{
+
+    min-height:290px;
+
+    padding:28px;
+
+    border:1px solid var(--line);
+
+    border-radius:17px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(10,16,31,.95),
+        rgba(4,7,14,.98)
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+
+.project::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    filter:blur(90px);
+
+    opacity:0;
+
+    right:-80px;
+
+    top:-80px;
+
+    transition:.4s;
+}
+
+
+.project:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(0,234,255,.45);
+
+    box-shadow:
+
+        0 0 25px rgba(0,234,255,.1);
+}
+
+
+.project:hover::before{
+
+    opacity:.12;
+}
+
+
+.project-number{
+
+    font-family:var(--font-tech);
+
+    color:#53627a;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+}
+
+
+.project h3{
+
+    margin:15px 0 9px;
+
+    font-family:var(--font-title);
+
+    font-size:23px;
+}
+
+
+.project-status{
+
+    display:inline-block;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    font-family:var(--font-tech);
+
+    font-size:7px;
+
+    letter-spacing:1px;
+
+    margin-bottom:14px;
+}
+
+
+.current{
+
+    color:#00ff9d;
+
+    border:1px solid rgba(0,255,157,.3);
+}
+
+
+.completed{
+
+    color:var(--cyan);
+
+    border:1px solid rgba(0,234,255,.2);
+}
+
+
+.project p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    font-size:13px;
+}
+
+
+.project-footer{
+
+    margin-top:20px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+}
+
+
+.project-link{
+
+    display:inline-flex;
+
+    margin-top:18px;
+
+    padding:8px 12px;
+
+    border:1px solid rgba(0,234,255,.3);
+
+    border-radius:7px;
+
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-family:var(--font-tech);
+
+    transition:.3s;
+}
+
+
+.project-link:hover{
+
+    background:rgba(0,234,255,.07);
+
+    box-shadow:0 0 15px rgba(0,234,255,.15);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HR CAREER
+========================================================= */
+
+.hr-section{
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+
+    background:
+
+    linear-gradient(
+        100deg,
+        rgba(0,234,255,.035),
+        rgba(135,76,255,.045)
+    );
+}
+
+
+.hr-grid{
+
+    display:grid;
+
+    grid-template-columns:.8fr 1.2fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+
+.hr-title h2{
+
+    font-family:var(--font-title);
+
+    font-size:48px;
+
+    line-height:1;
+}
+
+
+.hr-title h2 span{
+
+    color:var(--cyan);
+
+    text-shadow:0 0 20px rgba(0,234,255,.25);
+}
+
+
+.hr-title p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-top:20px;
+}
+
+
+.hr-values{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:13px;
+}
+
+
+.hr-value{
+
+    padding:20px;
+
+    border:1px solid var(--line);
+
+    border-radius:12px;
+
+    background:rgba(5,9,17,.7);
+
+    transition:.3s;
+}
+
+
+.hr-value:hover{
+
+    border-color:var(--violet);
+
+    box-shadow:
+        0 0 18px rgba(135,76,255,.12);
+
+    transform:translateY(-4px);
+}
+
+
+.hr-value strong{
+
+    font-family:var(--font-title);
+
+    font-size:14px;
+}
+
+
+.hr-value p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:6px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievements{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+
+.achievement{
+
+    min-height:190px;
+
+    padding:24px;
+
+    border:1px solid var(--line);
+
+    border-radius:15px;
+
+    background:#080d18;
+
+    transition:.4s;
+}
+
+
+.achievement:hover{
+
+    transform:translateY(-7px);
+
+    border-color:var(--violet);
+
+    box-shadow:
+
+        0 0 20px rgba(135,76,255,.16),
+
+        0 0 40px rgba(225,76,255,.06);
+}
+
+
+.achievement-icon{
+
+    width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:9px;
+
+    border:1px solid rgba(0,234,255,.25);
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+}
+
+
+.achievement h3{
+
+    font-family:var(--font-title);
+
+    font-size:16px;
+
+    margin:17px 0 8px;
+}
+
+
+.achievement p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box{
+
+    padding:43px;
+
+    border:1px solid rgba(0,234,255,.22);
+
+    border-radius:20px;
+
+    background:
+
+    radial-gradient(
+        circle at 85% 15%,
+        rgba(135,76,255,.13),
+        transparent 30%
+    ),
+
+    #080d18;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+}
+
+
+.contact-box h2{
+
+    font-family:var(--font-title);
+
+    font-size:40px;
+
+    line-height:1.05;
+}
+
+
+.contact-box h2 span{
+
+    color:var(--cyan);
+}
+
+
+.contact-box p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-top:15px;
+}
+
+
+.contact-links{
+
+    display:grid;
+
+    gap:11px;
+}
+
+
+.contact-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+
+.contact-link:hover{
+
+    transform:translateX(6px);
+
+    border-color:var(--cyan);
+
+    box-shadow:
+        0 0 15px rgba(0,234,255,.11);
+}
+
+
+.contact-icon{
+
+    width:35px;
+
+    height:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:8px;
+
+    background:rgba(0,234,255,.06);
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+}
+
+
+.contact-link small{
+
+    display:block;
+
+    color:#6e7c92;
+
+    font-size:8px;
+
+    margin-bottom:3px;
+}
+
+
+.contact-link span{
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:30px 0;
+
+    border-top:1px solid var(--line);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    color:#66738a;
+
+    font-size:10px;
+}
+
+
+footer strong{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:1s ease;
+}
+
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+    .hero{
+        grid-template-columns:minmax(0,1fr) minmax(250px,.72fr);
+        gap:28px;
+        min-height:auto;
+        padding-top:105px;
+        align-items:center;
+    }
+
+    .hero-content{min-width:0;}
+    .hero-description{max-width:none;margin-left:0;margin-right:0;text-align:left;}
+    .hero-buttons{justify-content:flex-start;}
+    .profile-area{justify-content:flex-end;margin-top:0;}
+}
+
+@media(max-width:850px){
+    .nav-inner{
+        width:100%;
+        max-width:none;
+        padding:14px 14px;
+        gap:18px;
+    }
+
+    .nav-links{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        overflow-y:hidden;
+        gap:22px;
+        white-space:nowrap;
+        max-width:100%;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+        padding-bottom:2px;
+    }
+
+    .nav-links::-webkit-scrollbar{display:none;}
+
+    .hero{
+        grid-template-columns:minmax(0,58%) minmax(0,42%);
+        gap:12px;
+        width:100%;
+        max-width:100%;
+        padding:95px 14px 50px;
+        margin:0;
+    }
+
+    .hero-small{font-size:7px;letter-spacing:1.1px;margin-bottom:14px;}
+
+    .hero h1{
+        font-size:clamp(28px,7.3vw,42px);
+        letter-spacing:-1.5px;
+        white-space:normal;
+        line-height:1.04;
+    }
+
+    .name-marquee{margin-top:16px;padding:9px 0;}
+    .marquee-track span{font-size:7px;letter-spacing:1px;margin-right:60px;}
+
+    .hero-description{
+        max-width:none;
+        font-size:12px;
+        line-height:1.7;
+        margin:17px 0;
+        text-align:left;
+        overflow-wrap:normal;
+        word-break:normal;
+    }
+
+    .hero-buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:8px;
+    }
+
+    .btn{
+        width:100%;
+        padding:10px 9px;
+        font-size:9px;
+        text-align:center;
+    }
+
+    .profile-area{
+        width:100%;
+        justify-content:flex-end;
+        margin:0 !important;
+        transform:none !important;
+        opacity:1 !important;
+        align-self:center;
+    }
+
+    .profile-card{
+        width:min(100%,300px);
+        height:400px;
+        border-radius:22px;
+    }
+
+    .profile-backdrop{
+        width:230px;
+        height:230px;
+        top:72px;
+    }
+
+    .profile-image{
+        width:245px;
+        height:310px;
+    }
+}
+
+@media(max-width:520px){
+    .nav-inner{
+        justify-content:flex-start;
+        align-items:stretch;
+    }
+
+    .brand{align-self:center;}
+
+    .nav-links{gap:18px;justify-content:flex-start;}
+
+    .hero{
+        grid-template-columns:minmax(0,56%) minmax(0,44%);
+        gap:8px;
+        padding:88px 8px 40px;
+    }
+
+    .hero-small{font-size:6px;letter-spacing:.8px;}
+
+    .hero h1{
+        font-size:clamp(25px,7.8vw,34px);
+        letter-spacing:-1.2px;
+    }
+
+    .hero-description{
+        font-size:11px;
+        line-height:1.65;
+        margin:14px 0;
+    }
+
+    .marquee-track span{font-size:6px;}
+
+    .btn{
+        padding:9px 6px;
+        font-size:8px;
+    }
+
+    .profile-card{
+        width:100%;
+        height:355px;
+        border-radius:20px;
+    }
+
+    .profile-backdrop{
+        width:185px;
+        height:185px;
+        top:56px;
+    }
+
+    .profile-image{
+        width:210px;
+        height:275px;
+    }
+}
+
+@media(max-width:380px){
+    .hero{
+        grid-template-columns:minmax(0,54%) minmax(0,46%);
+        gap:6px;
+        padding-left:6px;
+        padding-right:6px;
+    }
+
+    .hero-description{font-size:10px;line-height:1.6;}
+    .hero h1{font-size:24px;}
+    .profile-card{height:330px;}
+    .profile-backdrop{width:165px;height:165px;top:52px;}
+    .profile-image{width:188px;height:252px;}
+}
+
+/* Keep hero visible immediately on mobile */
+@media(max-width:850px){
+    .hero-content.reveal,
+    .profile-area.reveal{
+        opacity:1 !important;
+        transform:none !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL MOBILE HERO / PROFILE OVERRIDE
+========================================================= */
+@media (max-width: 850px){
+    html,body{overflow-x:hidden;}
+
+    .navbar{position:fixed;top:0;left:0;width:100%;}
+    .nav-inner{
+        width:100%;
+        padding:12px 10px;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        gap:12px;
+        overflow:hidden;
+    }
+    .brand{flex:0 0 auto;font-size:11px;}
+    .nav-links{
+        flex:1 1 auto;
+        min-width:0;
+        display:flex;
+        flex-wrap:nowrap;
+        gap:16px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        white-space:nowrap;
+        justify-content:flex-start;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+    }
+    .nav-links::-webkit-scrollbar{display:none;}
+    .nav-links a{font-size:8px;letter-spacing:.5px;white-space:nowrap;}
+
+    .hero{
+        width:100%;
+        max-width:100%;
+        min-height:100vh;
+        margin:0;
+        padding:92px 12px 40px;
+        display:grid;
+        grid-template-columns:minmax(0,1fr) 150px;
+        gap:14px;
+        align-items:center;
+        text-align:left;
+    }
+
+    .hero-content{
+        min-width:0;
+        width:100%;
+        margin:0;
+        padding:0;
+        text-align:left;
+    }
+
+    .hero-small{
+        margin-bottom:12px;
+        font-size:6.5px;
+        letter-spacing:1px;
+        line-height:1.5;
+    }
+
+    .hero h1{
+        margin:0;
+        font-size:clamp(28px,7.7vw,42px);
+        line-height:1.04;
+        letter-spacing:-1.5px;
+        white-space:normal;
+        word-break:keep-all;
+    }
+
+    .name-marquee{
+        width:100%;
+        margin-top:14px;
+        padding:8px 0;
+        overflow:hidden;
+    }
+    .marquee-track span{font-size:6px;letter-spacing:.7px;}
+
+    .hero-description{
+        width:100%;
+        max-width:none;
+        margin:15px 0;
+        font-size:11px;
+        line-height:1.72;
+        text-align:left;
+        overflow-wrap:anywhere;
+        word-break:normal;
+    }
+
+    .hero-buttons{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:7px;
+    }
+    .hero-buttons .btn{
+        width:100%;
+        padding:9px 7px;
+        font-size:8px;
+        text-align:center;
+    }
+
+    .profile-area{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:150px;
+        min-width:0;
+        margin:0 !important;
+        padding:0;
+        opacity:1 !important;
+        transform:none !important;
+        align-self:center;
+    }
+
+    .profile-card{
+        position:relative;
+        width:150px;
+        height:250px;
+        margin:0;
+        overflow:hidden;
+        border-radius:20px;
+        display:block;
+        opacity:1 !important;
+        visibility:visible !important;
+    }
+
+    .profile-backdrop{
+        position:absolute;
+        width:122px;
+        height:122px;
+        left:50%;
+        top:48px;
+        transform:translateX(-50%);
+        border-radius:50%;
+        background:#fff;
+        z-index:1;
+        opacity:1;
+        visibility:visible;
+    }
+
+    .profile-image{
+        position:absolute;
+        width:145px;
+        height:215px;
+        left:50%;
+        bottom:0;
+        transform:translateX(-50%);
+        margin:0;
+        padding:0;
+        z-index:2;
+        opacity:1;
+        visibility:visible;
+        animation:none;
+    }
+
+    .profile-image img{
+        display:block !important;
+        width:100% !important;
+        height:100% !important;
+        object-fit:contain !important;
+        object-position:center bottom !important;
+        opacity:1 !important;
+        visibility:visible !important;
+        border:0 !important;
+        border-radius:0 !important;
+        background:transparent !important;
+    }
+}
+
+@media (max-width:520px){
+    .nav-inner{padding:11px 8px;gap:9px;}
+    .brand{font-size:10px;}
+    .nav-links{gap:14px;}
+    .nav-links a{font-size:7.5px;}
+
+    .hero{
+        grid-template-columns:minmax(0,1fr) 128px;
+        gap:9px;
+        padding:90px 8px 32px;
+    }
+    .hero-small{font-size:5.8px;letter-spacing:.7px;}
+    .hero h1{font-size:clamp(25px,8vw,34px);}
+    .hero-description{font-size:10px;line-height:1.65;}
+    .hero-buttons .btn{font-size:7.5px;padding:8px 5px;}
+
+    .profile-area,.profile-card{width:128px;}
+    .profile-card{height:220px;}
+    .profile-backdrop{width:105px;height:105px;top:44px;}
+    .profile-image{width:125px;height:190px;}
+}
+
+@media (max-width:390px){
+    .hero{grid-template-columns:minmax(0,1fr) 116px;gap:7px;padding-left:6px;padding-right:6px;}
+    .profile-area,.profile-card{width:116px;}
+    .profile-card{height:205px;}
+    .profile-backdrop{width:94px;height:94px;top:42px;}
+    .profile-image{width:112px;height:178px;}
+    .hero-description{font-size:9.3px;}
+}
+
+/* Make hero items visible immediately on small screens */
+@media (max-width:850px){
+    .hero-content.reveal,
+    .profile-area.reveal{opacity:1 !important;transform:none !important;}
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+<div class="container nav-inner">
+
+<a href="#home" class="brand">
+#HRTECH
+</a>
+
+
+<ul class="nav-links">
+
+<li><a href="#home">HOME</a></li>
+
+<li><a href="#about">ABOUT</a></li>
+
+<li><a href="#education">EDUCATION</a></li>
+
+<li><a href="#experience">EXPERIENCE</a></li>
+
+<li><a href="#skills">SKILLS</a></li>
+
+<li><a href="#projects">PROJECTS</a></li>
+
+<li><a href="#achievements">ACHIEVEMENTS</a></li>
+
+<li><a href="#contact">CONTACT</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero container" id="home">
+
+
+<div class="hero-content reveal">
+
+
+<div class="hero-small">
+
+MCA STUDENT · HR CAREER FOCUS · TECHNOLOGY
+
+</div>
+
+
+<!-- SAME LINE -->
+
+<h1>
+
+R. JANAGA <span>PRIYA</span>
+
+</h1>
+
+
+<!-- ONE QUOTE -->
+
+<div class="name-marquee">
+
+<div class="marquee-track">
+
+<span>
+<strong>"Technology enables progress; people create it."</strong>
+&nbsp; — &nbsp; HR × TECHNOLOGY
+</span>
+
+<span>
+<strong>"Technology enables progress; people create it."</strong>
+&nbsp; — &nbsp; HR × TECHNOLOGY
+</span>
+
+</div>
+
+</div>
+
+
+<p class="hero-description">
+
+I am an <strong>MCA student</strong> with a strong foundation in
+Information Technology, web development and programming, currently
+developing my career direction toward <strong>Human Resources and
+HR Technology</strong>.
+
+I combine technical awareness with communication, leadership,
+team coordination, adaptability and problem-solving skills to
+understand both <strong>technology-driven processes and
+people-oriented organizational needs.</strong>
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn btn-primary">
+
+EXPLORE PROFILE →
+
+</a>
+
+
+<a
+href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
+target="_blank"
+class="btn">
+
+LINKEDIN ↗
+
+</a>
+
+
+<a
+href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
+target="_blank"
+class="btn">
+
+GITHUB ↗
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PROFILE CARD
+===================================================== -->
+
+<div class="profile-area reveal">
+    <div class="profile-card">
+        <div class="profile-backdrop"></div>
+        <div class="profile-image">
+            <img src="profile.jpg" alt="R. Janaga Priya" onerror="this.onerror=null;this.src='profile.png';">
+        </div>
+    </div>
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+
+01 // ABOUT ME
+
+</div>
+
+<h2>
+
+Technology. People. Purpose.
+
+</h2>
+
+<p>
+
+A technology-enabled perspective toward modern HR and organizational growth.
+
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="glass-card reveal">
+
+
+<p class="about-text">
+
+I am currently pursuing a <strong>Master of Computer Applications
+(MCA)</strong> at Francis Xavier Engineering College, following a
+Bachelor's degree in Information Technology.
+
+My academic journey has developed a strong foundation in
+<strong>programming, web development, digital technologies,
+problem solving and project implementation.</strong>
+
+<br><br>
+
+Beyond technical knowledge, I have developed practical strengths
+in <strong>communication, leadership, teamwork, coordination,
+adaptability, decision making and interpersonal interaction</strong>
+through academic responsibilities, competitions and team-based
+projects.
+
+<br><br>
+
+My professional goal is to build a career in
+<strong>Human Resources</strong>, particularly in environments where
+technology and people management intersect. I am interested in
+understanding organizational processes, supporting employees,
+coordinating teams and contributing to technology-enabled HR
+operations.
+
+<br><br>
+
+I approach professional responsibilities with a
+<strong>learning mindset, accountability, structured thinking and
+a willingness to continuously improve.</strong>
+
+</p>
+
+
+</div>
+
+
+<div class="glass-card reveal">
+
+
+<div class="focus-list">
+
+
+<div class="focus-item">
+
+<span>CAREER GOAL</span>
+
+<h4>Human Resources</h4>
+
+</div>
+
+
+<div class="focus-item">
+
+<span>TECHNICAL FOUNDATION</span>
+
+<h4>Information Technology</h4>
+
+</div>
+
+
+<div class="focus-item">
+
+<span>INTEREST</span>
+
+<h4>HR Technology</h4>
+
+</div>
+
+
+<div class="focus-item">
+
+<span>PROFESSIONAL APPROACH</span>
+
+<h4>People • Process • Technology</h4>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+
+02 // EDUCATION
+
+</div>
+
+<h2>
+
+Academic Journey
+
+</h2>
+
+<p>
+
+From Information Technology to advanced computing and HR technology.
+
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+
+CURRENT
+
+</div>
+
+<h3>
+
+Master of Computer Applications — MCA
+
+</h3>
+
+<p>
+
+Francis Xavier Engineering College
+<br>
+Currently Pursuing
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+
+2023 — 2026
+
+</div>
+
+<h3>
+
+Bachelor of Science in Information Technology — B.Sc. IT
+
+</h3>
+
+<p>
+
+Rose Mary College of Arts and Science
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+
+HIGHER SECONDARY
+
+</div>
+
+<h3>
+
+Higher Secondary — HSC
+
+</h3>
+
+<p>
+
+Little Flower Model School
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-year">
+
+SECONDARY
+
+</div>
+
+<h3>
+
+Secondary School — SSLC
+
+</h3>
+
+<p>
+
+Little Flower Model School
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+
+03 // EXPERIENCE
+
+</div>
+
+<h2>
+
+Practical Experience
+
+</h2>
+
+<p>
+
+Hands-on technical exposure through professional internship experience.
+
+</p>
+
+</div>
+
+
+<div class="glass-card internship-card reveal">
+
+
+<div class="internship-header">
+
+
+<div class="internship-title">
+
+<h3>
+
+Web Development Intern
+
+</h3>
+
+<p>
+
+Malaris Software and Solutions
+
+</p>
+
+</div>
+
+
+<div class="internship-badge">
+
+30-DAY INTERNSHIP
+
+</div>
+
+
+</div>
+
+
+<p class="internship-description">
+
+Completed a 30-day Web Development Internship involving practical
+work with <strong>HTML, CSS, JavaScript and Bootstrap</strong>.
+Worked on responsive web pages, interface development and UI
+improvements while gaining practical experience in translating
+design requirements into functional web interfaces.
+
+The internship also included the development of a perfume
+e-commerce website project, strengthening my understanding of
+responsive layouts, navigation, interactive components and
+user-focused web design.
+
+</p>
+
+
+<div class="tech-row">
+
+<span class="tech-pill">HTML</span>
+
+<span class="tech-pill">CSS</span>
+
+<span class="tech-pill">JavaScript</span>
+
+<span class="tech-pill">Bootstrap</span>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+
+04 // SKILLS
+
+</div>
+
+<h2>
+
+Capability Stack
+
+</h2>
+
+<p>
+
+A focused combination of technical, HR-oriented and productivity skills.
+
+</p>
+
+</div>
+
+
+<div class="skills-layout">
+
+
+<!-- TECHNICAL -->
+
+<div class="glass-card skill-group reveal">
+
+<h3>
+
+Technical Skills
+
+</h3>
+
+
+<div class="skill-cloud">
+
+<div class="skill tech">Python</div>
+
+<div class="skill tech">C Programming</div>
+
+<div class="skill tech">HTML</div>
+
+<div class="skill tech">CSS</div>
+
+<div class="skill tech">JavaScript</div>
+
+<div class="skill tech">PHP</div>
+
+<div class="skill tech">SQL</div>
+
+<div class="skill tech">Bootstrap</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- HR -->
+
+<div class="glass-card skill-group reveal">
+
+<h3>
+
+Soft Skills
+
+</h3>
+
+
+<div class="skill-cloud">
+
+<div class="skill hr">Communication</div>
+
+<div class="skill hr">Active Listening</div>
+
+<div class="skill hr">Leadership</div>
+
+<div class="skill hr">Team Coordination</div>
+
+<div class="skill hr">Employee Interaction</div>
+
+<div class="skill hr">Problem Solving</div>
+
+<div class="skill hr">Decision Making</div>
+
+<div class="skill hr">Conflict Resolution</div>
+
+<div class="skill hr">Adaptability</div>
+
+<div class="skill hr">Time Management</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- TOOLS -->
+
+<div class="glass-card skill-group reveal">
+
+<h3>
+
+Office Automation
+</h3>
+
+
+<div class="skill-cloud">
+
+<div class="skill tool">MS Word</div>
+
+<div class="skill tool">MS Excel</div>
+
+<div class="skill tool">MS PowerPoint</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+
+05 // PROJECTS
+
+</div>
+
+<h2>
+
+Selected Projects
+
+</h2>
+
+<p>
+
+Projects demonstrating technical implementation, innovation and problem solving.
+
+</p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<!-- WORKWATCH -->
+
+<div class="project reveal">
+
+
+<div class="project-number">
+
+PROJECT // 01
+
+</div>
+
+
+<h3>
+
+WorkWatch
+
+</h3>
+
+
+<span class="project-status current">
+
+CURRENTLY WORKING
+
+</span>
+
+
+<p>
+
+A privacy-preserving digital workplace productivity management
+system designed to track working-time patterns while maintaining
+employee privacy.
+
+The concept includes employee and HR portals, workplace
+verification, entry and exit tracking, usage-category analytics
+and productivity alerts.
+
+</p>
+
+
+<div class="project-footer">
+
+<span class="tech-pill">HTML</span>
+
+<span class="tech-pill">CSS</span>
+
+<span class="tech-pill">Python</span>
+
+<span class="tech-pill">SQL</span>
+
+<span class="tech-pill">HR Technology</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- RESQORA -->
+
+<div class="project reveal">
+
+
+<div class="project-number">
+
+PROJECT // 02
+
+</div>
+
+
+<h3>
+
+ResQora
+
+</h3>
+
+
+<span class="project-status completed">
+
+PROJECT DEVELOPMENT
+
+</span>
+
+
+<p>
+
+AI-powered smart safety monitoring and emergency response system
+concept designed for incident detection, emergency alerts,
+environmental monitoring, GPS localization and centralized
+dashboard management.
+
+</p>
+
+
+<div class="project-footer">
+
+<span class="tech-pill">AI</span>
+
+<span class="tech-pill">Computer Vision</span>
+
+<span class="tech-pill">IoT</span>
+
+<span class="tech-pill">Emergency Response</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- INTELLIPOLE -->
+
+<div class="project reveal">
+
+
+<div class="project-number">
+
+PROJECT // 03
+
+</div>
+
+
+<h3>
+
+Intellipole Sentinel
+
+</h3>
+
+
+<span class="project-status completed">
+
+ACADEMIC PROJECT
+
+</span>
+
+
+<p>
+
+AI-powered smart safety and emergency response system integrating
+intelligent monitoring, incident detection, environmental sensing
+and automated emergency notifications.
+
+</p>
+
+
+<div class="project-footer">
+
+<span class="tech-pill">AI</span>
+
+<span class="tech-pill">IoT</span>
+
+<span class="tech-pill">Safety Monitoring</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- NOMAD -->
+
+<div class="project reveal">
+
+
+<div class="project-number">
+
+PROJECT // 04
+
+</div>
+
+
+<h3>
+
+Nomad Noshery
+
+</h3>
+
+
+<span class="project-status completed">
+
+INNOVATION PROJECT
+
+</span>
+
+
+<p>
+
+IoT-based smart food truck concept integrating digital menus,
+mobility, safety monitoring, fire detection, obstacle avoidance,
+water-level monitoring and automated features.
+
+</p>
+
+
+<div class="project-footer">
+
+<span class="tech-pill">IoT</span>
+
+<span class="tech-pill">Automation</span>
+
+<span class="tech-pill">Smart Systems</span>
+
+</div>
+
+
+</div>
+
+
+
+<!-- PERFUME WEBSITE -->
+
+<div class="project reveal">
+
+
+<div class="project-number">
+
+PROJECT // 05
+
+</div>
+
+
+<h3>
+
+Signature Scents
+
+</h3>
+
+
+<span class="project-status completed">
+
+WEB DEVELOPMENT PROJECT
+
+</span>
+
+
+<p>
+
+A responsive perfume e-commerce website developed during my
+web development learning and internship journey. The project
+focuses on modern UI design, product presentation, responsive
+layouts, navigation, interactive sections and user-friendly
+web experiences.
+
+</p>
+
+
+<div class="project-footer">
+
+<span class="tech-pill">HTML</span>
+
+<span class="tech-pill">CSS</span>
+
+<span class="tech-pill">JavaScript</span>
+
+<span class="tech-pill">Bootstrap</span>
+
+</div>
+
+
+<a
+href="https://github.com/R-JanagaPriya/Perfume_Website"
+target="_blank"
+class="project-link">
+
+VIEW GITHUB PROJECT ↗
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HR CAREER DIRECTION
+===================================================== -->
+
+<section class="hr-section">
+
+
+<div class="container">
+
+
+<div class="hr-grid">
+
+
+<div class="hr-title reveal">
+
+
+<div class="section-number">
+
+06 // CAREER DIRECTION
+
+</div>
+
+
+<h2>
+
+Building Toward<br>
+
+<span>Human Resources.</span>
+
+</h2>
+
+
+<p>
+
+My technical background gives me an additional perspective for
+understanding people, processes and technology-enabled workplaces.
+
+</p>
+
+
+</div>
+
+
+
+<div class="hr-values">
+
+
+<div class="hr-value reveal">
+
+<strong>
+
+Communication
+
+</strong>
+
+<p>
+
+Clear professional communication and active listening.
+
+</p>
+
+</div>
+
+
+<div class="hr-value reveal">
+
+<strong>
+
+People Management
+
+</strong>
+
+<p>
+
+Team coordination, employee interaction and empathy.
+
+</p>
+
+</div>
+
+
+<div class="hr-value reveal">
+
+<strong>
+
+Leadership
+
+</strong>
+
+<p>
+
+Experience taking responsibility and coordinating teams.
+
+</p>
+
+</div>
+
+
+<div class="hr-value reveal">
+
+<strong>
+
+Analytical Thinking
+
+</strong>
+
+<p>
+
+Structured problem solving and decision making.
+
+</p>
+
+</div>
+
+
+<div class="hr-value reveal">
+
+<strong>
+
+Adaptability
+
+</strong>
+
+<p>
+
+Continuous learning and flexibility in new environments.
+
+</p>
+
+</div>
+
+
+<div class="hr-value reveal">
+
+<strong>
+
+HR Technology
+
+</strong>
+
+<p>
+
+Interest in connecting technology with modern HR processes.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section id="achievements">
+
+<div class="container">
+
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+
+07 // ACHIEVEMENTS
+
+</div>
+
+
+<h2>
+
+Recognition & Leadership
+
+</h2>
+
+
+<p>
+
+Leadership, innovation and competitive achievements across academic activities.
+
+</p>
+
+</div>
+
+
+<div class="achievements">
+
+
+<!-- 01 -->
+
+<div class="achievement reveal">
+
+<div class="achievement-icon">
+
+01
+
+</div>
+
+
+<h3>
+
+Outstanding Student
+
+</h3>
+
+
+<p>
+
+Recognized as an Outstanding Student in the batch for academic
+and extracurricular contribution.
+
+</p>
+
+</div>
+
+
+
+<!-- 02 -->
+
+<div class="achievement reveal">
+
+<div class="achievement-icon">
+
+02
+
+</div>
+
+
+<h3>
+
+Department President
+
+</h3>
+
+
+<p>
+
+Served as Department President, contributing to student
+coordination, leadership and departmental activities.
+
+</p>
+
+</div>
+
+
+
+<!-- 03 -->
+
+<div class="achievement reveal">
+
+<div class="achievement-icon">
+
+03
+
+</div>
+
+
+<h3>
+
+Tamizh Ilakkiya Mandram President
+
+</h3>
+
+
+<p>
+
+Served as President of the Tamizh Ilakkiya Mandram, taking
+responsibility for coordination, leadership and cultural activities.
+
+</p>
+
+</div>
+
+
+
+<!-- 04 -->
+
+<div class="achievement reveal">
+
+<div class="achievement-icon">
+
+04
+
+</div>
+
+
+<h3>
+
+Nimirthu Nil Hackathon Selection
+
+</h3>
+
+
+<p>
+
+Selected as part of one of the shortlisted projects after
+<strong>25 projects were shortlisted</strong> from the competition,
+with participation through the smart safety project.
+
+</p>
+
+</div>
+
+
+
+<!-- 05 -->
+
+<div class="achievement reveal">
+
+<div class="achievement-icon">
+
+05
+
+</div>
+
+
+<h3>
+
+IoT Project (Cash Prize)
+
+</h3>
+
+
+<p>
+
+Received recognition and a cash prize for an innovative
+IoT-based project.
+
+</p>
+
+</div>
+
+
+
+<!-- 06 -->
+
+<div class="achievement reveal">
+
+<div class="achievement-icon">
+
+06
+
+</div>
+
+
+<h3>
+
+Intercollegiate Competitions
+
+</h3>
+
+
+<p>
+
+Achieved recognition across multiple intercollegiate competitions,
+including <strong>PPT Winner, Software Marketing Winner,
+Short Film Winner and Stress Interview Winner.</strong>
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+
+<div class="container">
+
+
+<div class="contact-box reveal">
+
+
+<div>
+
+
+<div class="section-number">
+
+08 // CONTACT
+
+</div>
+
+
+<h2>
+
+LET'S BUILD<br>
+
+<span>WHAT'S NEXT.</span>
+
+</h2>
+
+
+<p>
+
+Open to internships, opportunities, collaborations and professional
+experiences where technology, people and organizational growth
+come together.
+
+</p>
+
+
+</div>
+
+
+
+<div class="contact-links">
+
+
+<!-- EMAIL -->
+
+<a
+class="contact-link"
+href="mailto:janagapriya290@gmail.com"
+>
+
+<div class="contact-icon">
+
+@
+
+</div>
+
+
+<div>
+
+<small>EMAIL</small>
+
+<span>
+
+janagapriya290@gmail.com
+
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- LINKEDIN -->
+
+<a
+class="contact-link"
+href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
+target="_blank"
+>
+
+<div class="contact-icon">
+
+in
+
+</div>
+
+
+<div>
+
+<small>LINKEDIN</small>
+
+<span>
+
+R. Janaga Priya ↗
+
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- GITHUB -->
+
+<a
+class="contact-link"
+href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
+target="_blank"
+>
+
+<div class="contact-icon">
+
+GH
+
+</div>
+
+
+<div>
+
+<small>GITHUB</small>
+
+<span>
+
+R-JanagaPriya ↗
+
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="container">
+
+
+<div>
+
+<strong>#HRTECH</strong>
+
+&nbsp; · &nbsp;
+
+R. Janaga Priya
+
+</div>
+
+
+<div>
+
+MCA · HR · Technology · People
+
+</div>
+
+
+<div>
+
+© <span id="year"></span> R. Janaga Priya
+
+</div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* YEAR */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+const observer =
+new IntersectionObserver(
+
+(entries, observer) => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold:0.12
+}
+
+);
+
+
+revealElements.forEach(element => {
+
+observer.observe(element);
+
+});
+
+
+
+/* =====================================================
+   MARQUEE HOVER
+===================================================== */
+
+const marquee =
+document.querySelector(".name-marquee");
+
+
+const marqueeTrack =
+document.querySelector(".marquee-track");
+
+
+marquee.addEventListener(
+"mouseenter",
+() => {
+
+marqueeTrack.style.animationPlayState =
+"paused";
+
+}
+);
+
+
+marquee.addEventListener(
+"mouseleave",
+() => {
+
+marqueeTrack.style.animationPlayState =
+"running";
+
+}
+);
+
+
+
+/* =====================================================
+   PROFILE TILT
+===================================================== */
+
+const profile =
+document.querySelector(".profile-card");
+
+
+profile.addEventListener(
+"mousemove",
+(e) => {
+
+
+const rect =
+profile.getBoundingClientRect();
+
+
+const x =
+e.clientX - rect.left;
+
+
+const y =
+e.clientY - rect.top;
+
+
+const rotateX =
+((y / rect.height) - .5) * -5;
+
+
+const rotateY =
+((x / rect.width) - .5) * 5;
+
+
+profile.style.transform =
+
+`translateY(-10px)
+ rotateX(${rotateX}deg)
+ rotateY(${rotateY}deg)`;
+
+
+}
+);
+
+
+profile.addEventListener(
+"mouseleave",
+() => {
+
+profile.style.transform =
+"translateY(0) rotateX(0) rotateY(0)";
+
+}
+);
+
+
+</script>
+
+
+</body>
+
+</html>
