@@ -534,12 +534,10 @@ a{
 ========================================================= */
 
 .profile-area{
-    width:100%;
     display:flex;
     justify-content:flex-start;
     align-items:center;
     position:relative;
-    min-width:0;
 }
 
 .profile-card{
@@ -547,18 +545,11 @@ a{
     height:480px;
     border:1px solid rgba(0,234,255,.32);
     border-radius:25px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(13,23,43,.95),
-            rgba(4,7,15,.98)
-        );
+    background:linear-gradient(145deg,rgba(13,23,43,.95),rgba(4,7,15,.98));
     position:relative;
     overflow:hidden;
     transition:.45s;
-    box-shadow:
-        0 0 30px rgba(0,234,255,.07),
-        inset 0 0 45px rgba(135,76,255,.04);
+    box-shadow:0 0 30px rgba(0,234,255,.07),inset 0 0 45px rgba(135,76,255,.04);
 }
 
 .profile-card::before{
@@ -590,29 +581,21 @@ a{
 }
 
 .profile-card:hover{
-    transform:
-        translateY(-10px)
-        rotateX(2deg)
-        rotateY(-2deg);
+    transform:translateY(-10px) rotateX(2deg) rotateY(-2deg);
     border-color:var(--cyan);
-    box-shadow:
-        0 0 25px rgba(0,234,255,.2),
-        0 0 70px rgba(135,76,255,.14);
+    box-shadow:0 0 25px rgba(0,234,255,.2),0 0 70px rgba(135,76,255,.14);
 }
 
-/* circular photo presentation */
 .profile-backdrop{
     position:absolute;
     width:300px;
     height:300px;
+    top:65px;
     left:50%;
-    top:74px;
     transform:translateX(-50%);
     border-radius:50%;
-    background:#ffffff;
-    box-shadow:
-        0 0 30px rgba(255,255,255,.12),
-        0 0 55px rgba(0,234,255,.08);
+    background:#f7f8fc;
+    box-shadow:0 0 30px rgba(0,234,255,.08);
     z-index:1;
 }
 
@@ -620,25 +603,16 @@ a{
     position:absolute;
     width:300px;
     height:300px;
+    top:65px;
     left:50%;
-    top:74px;
     transform:translateX(-50%);
     border-radius:50%;
     overflow:hidden;
     z-index:2;
     border:6px solid transparent;
-    background:
-        linear-gradient(#050914,#050914) padding-box,
-        linear-gradient(
-            135deg,
-            var(--cyan),
-            var(--blue),
-            var(--violet),
-            var(--pink)
-        ) border-box;
-    box-shadow:
-        0 0 25px rgba(0,234,255,.25),
-        0 0 55px rgba(135,76,255,.14);
+    background:linear-gradient(#050914,#050914) padding-box,linear-gradient(135deg,var(--cyan),var(--blue),var(--violet),var(--pink)) border-box;
+    box-shadow:0 0 25px rgba(0,234,255,.25),0 0 55px rgba(135,76,255,.12);
+    animation:profileFloat 4s ease-in-out infinite;
 }
 
 .profile-image img{
@@ -648,6 +622,11 @@ a{
     object-fit:cover;
     object-position:center center;
     border-radius:50%;
+}
+
+@keyframes profileFloat{
+    0%,100%{transform:translateX(-50%) translateY(0);}
+    50%{transform:translateX(-50%) translateY(-8px);}
 }
 
 /* =========================================================
@@ -1743,61 +1722,40 @@ footer strong{
    RESPONSIVE
 ========================================================= */
 
-/* Tablet / small desktop */
 @media(max-width:1000px){
+
     .hero{
-        grid-template-columns:minmax(0,1.45fr) minmax(250px,.75fr);
-        gap:24px;
+        grid-template-columns:1fr;
+        gap:45px;
+        text-align:left;
         min-height:auto;
         padding-top:105px;
-        align-items:center;
     }
 
-    .hero-content,
-    .profile-area{
+    .hero-content{
+        width:100%;
         min-width:0;
     }
 
     .hero-description{
-        max-width:none;
         margin-left:0;
         margin-right:0;
     }
 
+    .hero-buttons{
+        justify-content:flex-start;
+    }
+
     .profile-area{
+        width:100%;
         justify-content:center;
-        transform:none;
-    }
-
-    .profile-card{
-        width:310px;
-        height:430px;
-    }
-
-    .profile-backdrop,
-    .profile-image{
-        width:250px;
-        height:250px;
-        top:72px;
-    }
-}
-
-@media(max-width:900px){
-    .nav-links{
-        gap:14px;
-    }
-
-    .nav-links a{
-        font-size:10px;
+        margin-top:10px;
     }
 
     .about-grid,
     .skills-layout,
     .hr-grid,
-    .contact-box{
-        grid-template-columns:1fr;
-    }
-
+    .contact-box,
     .projects-grid{
         grid-template-columns:1fr;
     }
@@ -1807,63 +1765,48 @@ footer strong{
     }
 }
 
-/* Phone */
 @media(max-width:650px){
 
-    html,
-    body{
+    html,body{
         width:100%;
         max-width:100%;
         overflow-x:hidden;
     }
 
-    .container{
-        width:100%;
-        max-width:100%;
-        margin:0;
-        padding-left:16px;
-        padding-right:16px;
-    }
-
-    /* one-line navigation */
     .navbar{
-        position:sticky;
-        top:0;
-        width:100%;
-        overflow:hidden;
+        position:relative;
     }
 
     .nav-inner{
         width:100%;
-        min-height:58px;
-        padding:12px 16px;
+        max-width:100%;
+        min-height:64px;
+        padding:14px 10px;
         display:flex;
         flex-direction:row;
         align-items:center;
         justify-content:flex-start;
-        gap:18px;
-        overflow:hidden;
+        gap:15px;
     }
 
     .brand{
         flex:0 0 auto;
-        font-size:12px;
+        font-size:14px;
     }
 
     .nav-links{
         flex:1 1 auto;
         min-width:0;
-        width:auto;
         display:flex;
         flex-wrap:nowrap;
         justify-content:flex-start;
-        align-items:center;
-        gap:16px;
+        gap:18px;
         overflow-x:auto;
         overflow-y:hidden;
-        scrollbar-width:none;
         white-space:nowrap;
-        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        padding-bottom:2px;
     }
 
     .nav-links::-webkit-scrollbar{
@@ -1875,38 +1818,35 @@ footer strong{
     }
 
     .nav-links a{
-        display:block;
         font-size:9px;
-        letter-spacing:.5px;
         white-space:nowrap;
     }
 
-    /* Desktop-like two-column hero */
     .hero{
-        width:100%;
-        max-width:100%;
+        width:calc(100% - 28px);
+        max-width:none;
         min-height:auto;
-        padding:48px 16px 50px;
-        display:grid;
-        grid-template-columns:minmax(0,1.55fr) minmax(145px,.72fr);
-        align-items:center;
-        gap:12px;
+        margin:0 auto;
+        padding:58px 0 55px;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:28px;
         text-align:left;
-        overflow:hidden;
+        overflow:visible;
     }
 
     .hero-content{
         width:100%;
-        min-width:0;
-        margin:0;
+        max-width:none;
     }
 
     .hero-small{
         width:100%;
-        margin-bottom:16px;
-        font-size:8px;
-        line-height:1.45;
-        letter-spacing:1.5px;
+        margin-bottom:18px;
+        font-size:7px;
+        letter-spacing:1.35px;
+        line-height:1.2;
         white-space:nowrap;
         overflow:hidden;
         text-overflow:clip;
@@ -1914,156 +1854,106 @@ footer strong{
 
     .hero h1{
         width:100%;
-        margin:0;
-        font-size:clamp(27px,7vw,38px);
-        line-height:1.08;
-        letter-spacing:-1.4px;
+        font-size:clamp(30px,9.4vw,40px);
+        line-height:1.05;
+        letter-spacing:-1.7px;
         white-space:nowrap;
+        overflow:visible;
     }
 
-    /* Keep marquee running to the end, clipped only inside itself */
     .name-marquee{
         width:100%;
-        max-width:100%;
+        max-width:none;
+        margin-top:22px;
+        padding:11px 0;
         overflow:hidden;
-        margin-top:18px;
-        padding:10px 0;
-        border-top:1px solid var(--line);
-        border-bottom:1px solid var(--line);
     }
 
     .marquee-track{
-        width:max-content;
         display:flex;
-        animation:quoteMove 18s linear infinite;
+        width:max-content;
+        flex-wrap:nowrap;
+        animation:quoteMove 14s linear infinite;
         will-change:transform;
     }
 
     .marquee-track span{
         flex:0 0 auto;
         font-size:8px;
-        letter-spacing:1px;
-        margin-right:65px;
+        letter-spacing:1.25px;
+        margin-right:70px;
         white-space:nowrap;
     }
 
     .hero-description{
         width:100%;
         max-width:none;
-        margin:18px 0;
-        font-size:12px;
-        line-height:1.65;
+        margin:22px 0;
+        font-size:14px;
+        line-height:1.8;
         text-align:left;
-        overflow-wrap:anywhere;
+        overflow-wrap:normal;
+        word-break:normal;
+        hyphens:none;
     }
 
     .hero-buttons{
         width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:stretch;
-        gap:8px;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+        justify-content:stretch;
     }
 
     .hero-buttons .btn{
         width:100%;
-        padding:11px 10px;
-        font-size:9px;
         text-align:center;
-        white-space:nowrap;
     }
 
-    /* Profile remains on the RIGHT */
     .profile-area{
         width:100%;
-        min-width:0;
-        margin:0 !important;
-        padding:0;
         display:flex;
         justify-content:center;
         align-items:center;
+        margin:8px 0 0;
         transform:none !important;
+        opacity:1;
+    }
+
+    .profile-area.reveal{
+        opacity:1;
+        transform:none;
     }
 
     .profile-card{
-        width:100%;
-        max-width:170px;
-        height:260px;
-        margin:0;
-        border-radius:18px;
+        width:min(100%,330px);
+        height:420px;
+        margin:0 auto;
     }
 
     .profile-backdrop,
     .profile-image{
-        width:132px;
-        height:132px;
-        top:62px;
+        width:270px;
+        height:270px;
+        top:58px;
     }
 
-    .profile-image{
-        border-width:4px;
+    .profile-image img{
+        object-fit:cover;
+        object-position:center center;
     }
 
-    /* All normal content stays within phone width */
     section{
         width:100%;
-        padding:70px 0;
-        overflow:hidden;
-    }
-
-    .section-heading{
-        width:100%;
-        margin-bottom:35px;
+        padding:72px 0;
     }
 
     .section-heading h2{
-        width:100%;
         font-size:32px;
-        line-height:1.15;
-        letter-spacing:-1.2px;
     }
 
-    .section-heading p{
-        width:100%;
-        font-size:13px;
-        line-height:1.6;
-    }
-
-    .glass-card,
-    .timeline-card,
-    .project,
-    .achievement,
-    .contact-box{
-        width:100%;
-        max-width:100%;
-    }
-
-    .about-text{
-        text-align:left;
-        font-size:14px;
-        line-height:1.75;
-    }
-
-    .timeline-item{
-        padding-left:44px;
-    }
-
-    .timeline::before{
-        left:11px;
-    }
-
-    .timeline-dot{
-        left:2px;
-    }
-
-    .projects-grid,
-    .skills-layout,
-    .hr-grid,
-    .contact-box{
-        grid-template-columns:1fr;
-    }
-
-    .achievements{
+    .achievements,
+    .hr-values{
         grid-template-columns:1fr;
     }
 
@@ -2072,61 +1962,49 @@ footer strong{
     }
 
     .contact-box h2{
-        font-size:32px;
+        font-size:31px;
     }
 
-    footer{
-        width:100%;
-        padding-left:16px;
-        padding-right:16px;
+    .timeline-item{
+        padding-left:48px;
+    }
+
+    .timeline::before{
+        left:12px;
+    }
+
+    .timeline-dot{
+        left:3px;
     }
 }
 
-/* Very small phones */
-@media(max-width:380px){
+@media(max-width:370px){
     .hero{
-        grid-template-columns:minmax(0,1.5fr) minmax(125px,.7fr);
-        gap:8px;
+        width:calc(100% - 22px);
     }
 
     .hero-small{
-        font-size:7px;
-        letter-spacing:1px;
+        font-size:6.5px;
+        letter-spacing:1.05px;
     }
 
     .hero h1{
-        font-size:25px;
-    }
-
-    .hero-description{
-        font-size:11px;
-        line-height:1.58;
-    }
-
-    .hero-buttons .btn{
-        font-size:8px;
+        font-size:28px;
     }
 
     .profile-card{
-        max-width:145px;
-        height:235px;
+        width:300px;
+        max-width:100%;
     }
 
     .profile-backdrop,
     .profile-image{
-        width:112px;
-        height:112px;
-        top:56px;
-    }
-
-    .nav-links{
-        gap:13px;
-    }
-
-    .nav-links a{
-        font-size:8px;
+        width:245px;
+        height:245px;
     }
 }
+
+
 </style>
 
 </head>
@@ -2248,7 +2126,6 @@ EXPLORE PROFILE →
 <a
 href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
 target="_blank"
-rel="noopener noreferrer"
 class="btn">
 
 LINKEDIN ↗
@@ -2259,7 +2136,6 @@ LINKEDIN ↗
 <a
 href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
 target="_blank"
-rel="noopener noreferrer"
 class="btn">
 
 GITHUB ↗
@@ -2278,17 +2154,22 @@ GITHUB ↗
 ===================================================== -->
 
 <div class="profile-area reveal">
-    <div class="profile-card">
-        <div class="profile-backdrop"></div>
 
-        <div class="profile-image">
-            <img
-                src="./profile.jpg"
-                alt="R. Janaga Priya"
-                onerror="this.onerror=null;this.src='./profile.png';">
-        </div>
-    </div>
+
+<div class="profile-card">
+
+<div class="profile-backdrop"></div>
+
+<div class="profile-image">
+
+<img src="./profile.jpg" alt="R. Janaga Priya">
+
 </div>
+
+</div>
+
+</div>
+
 </header>
 
 
@@ -3140,7 +3021,6 @@ web experiences.
 <a
 href="https://github.com/R-JanagaPriya/Perfume_Website"
 target="_blank"
-rel="noopener noreferrer"
 class="project-link">
 
 VIEW GITHUB PROJECT ↗
@@ -3614,8 +3494,6 @@ janagapriya290@gmail.com
 
 </a>
 
-                    <!-- LINKEDIN -->
-
 
 
 <!-- LINKEDIN -->
@@ -3821,26 +3699,58 @@ marqueeTrack.style.animationPlayState =
    PROFILE TILT
 ===================================================== */
 
-const profile = document.querySelector(".profile-card");
+const profile =
+document.querySelector(".profile-card");
 
-if (profile && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
-    profile.addEventListener("mousemove", (e) => {
-        const rect = profile.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
 
-        const rotateX = ((y / rect.height) - .5) * -5;
-        const rotateY = ((x / rect.width) - .5) * 5;
+profile.addEventListener(
+"mousemove",
+(e) => {
 
-        profile.style.transform =
-            `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
+if (window.innerWidth <= 650) return;
 
-    profile.addEventListener("mouseleave", () => {
-        profile.style.transform =
-            "translateY(0) rotateX(0) rotateY(0)";
-    });
+
+const rect =
+profile.getBoundingClientRect();
+
+
+const x =
+e.clientX - rect.left;
+
+
+const y =
+e.clientY - rect.top;
+
+
+const rotateX =
+((y / rect.height) - .5) * -5;
+
+
+const rotateY =
+((x / rect.width) - .5) * 5;
+
+
+profile.style.transform =
+
+`translateY(-10px)
+ rotateX(${rotateX}deg)
+ rotateY(${rotateY}deg)`;
+
+
 }
+);
+
+
+profile.addEventListener(
+"mouseleave",
+() => {
+
+profile.style.transform =
+"translateY(0) rotateX(0) rotateY(0)";
+
+}
+);
+
 
 </script>
 
