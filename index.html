@@ -2105,64 +2105,45 @@ footer strong{
 
 
 
+
 /* =========================================================
-   FINAL PROFILE + MOBILE LAYOUT FIX
+   FINAL RESPONSIVE OVERRIDES
+   Keep content complete and visible at every width
 ========================================================= */
 
-.profile-area{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    position:relative;
-    transform:none;
-}
-
 .profile-card{
-    width:370px;
-    height:480px;
     position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:0;
+    isolation:isolate;
 }
 
-/* Remove old profile decorations/content */
-.profile-card::before,
-.profile-card::after{
-    pointer-events:none;
-}
-
-.profile-image-wrap{
-    width:310px;
-    height:310px;
-    position:relative;
-    z-index:4;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-/* THE PHOTO ITSELF IS THE CIRCLE */
-.profile-image{
+.profile-backdrop{
+    position:absolute;
     width:300px;
     height:300px;
-    margin:0;
-    padding:0;
+    top:65px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:#fff;
+    z-index:1;
+    box-shadow:0 12px 35px rgba(0,0,0,.22);
+}
+
+.profile-image{
+    position:absolute;
+    width:300px;
+    height:300px;
+    top:65px;
+    left:50%;
+    transform:translateX(-50%);
     border-radius:50%;
     overflow:hidden;
-    position:relative;
-    z-index:5;
-    background:#fff;
-    border:6px solid transparent;
-    background:
-        linear-gradient(#fff,#fff) padding-box,
-        linear-gradient(135deg,var(--cyan),var(--blue),var(--violet),var(--pink)) border-box;
-    box-shadow:
-        0 0 25px rgba(0,234,255,.30),
-        0 0 65px rgba(135,76,255,.16);
-    animation:profileFloat 4s ease-in-out infinite;
+    z-index:2;
+    margin:0;
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+    animation:none;
 }
 
 .profile-image img{
@@ -2175,133 +2156,193 @@ footer strong{
     border-radius:50%;
 }
 
-.profile-card:hover{
-    transform:translateY(-10px) rotateX(2deg) rotateY(-2deg);
-    border-color:var(--cyan);
-    box-shadow:
-        0 0 25px rgba(0,234,255,.20),
-        0 0 70px rgba(135,76,255,.14);
+.profile-top,
+.profile-info,
+.profile-bottom{
+    display:none;
 }
 
-/* Keep hero content flush to the left */
-.hero-content{
-    min-width:0;
+@media (max-width:1000px){
+    .hero{
+        display:grid;
+        grid-template-columns:minmax(0,1fr) 250px;
+        gap:18px;
+        align-items:center;
+        min-height:auto;
+        padding-top:105px;
+        text-align:left;
+    }
+
+    .hero-content{min-width:0;}
+    .profile-area{
+        min-width:0;
+        margin-top:0 !important;
+        transform:none !important;
+        justify-content:center;
+    }
+
+    .profile-card{
+        width:250px;
+        height:360px;
+        max-width:100%;
+    }
+
+    .profile-backdrop,
+    .profile-image{
+        width:210px;
+        height:210px;
+        top:58px;
+    }
+
+    .hero-content.reveal,
+    .profile-area.reveal{
+        opacity:1 !important;
+        transform:none !important;
+    }
 }
 
-.hero-description{
-    width:100%;
-    max-width:650px;
-    text-align:left;
-}
+@media (max-width:650px){
+    html,body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+    }
 
-/* Mobile: keep navigation in ONE horizontal line */
-@media(max-width:650px){
+    .container{
+        width:calc(100% - 20px);
+        max-width:none;
+    }
+
+    /* One-line professional navigation */
     .navbar{
-        position:relative;
+        position:fixed !important;
+        top:0;
+        left:0;
+        right:0;
         width:100%;
     }
 
     .nav-inner{
-        width:100%;
-        max-width:none;
         min-height:62px;
-        padding:14px 14px;
+        width:100%;
+        padding:12px 10px;
         display:flex;
         flex-direction:row;
         align-items:center;
         justify-content:flex-start;
-        gap:18px;
-        overflow-x:auto;
-        overflow-y:hidden;
-        scrollbar-width:none;
+        gap:14px;
+        overflow:hidden;
     }
-
-    .nav-inner::-webkit-scrollbar{display:none;}
 
     .brand{
         flex:0 0 auto;
-        font-size:12px;
+        font-size:11px;
+        letter-spacing:1.4px;
     }
 
     .nav-links{
-        flex:0 0 auto;
-        width:max-content;
+        flex:1 1 auto;
+        min-width:0;
+        width:auto;
         display:flex;
-        flex-direction:row;
-        flex-wrap:nowrap;
-        justify-content:flex-start;
-        gap:20px;
-        list-style:none;
+        flex-wrap:nowrap !important;
+        justify-content:flex-start !important;
+        align-items:center;
+        gap:16px !important;
+        overflow-x:auto;
+        overflow-y:hidden;
+        white-space:nowrap;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
     }
+
+    .nav-links::-webkit-scrollbar{display:none;}
 
     .nav-links li{flex:0 0 auto;}
     .nav-links a{
-        font-size:9px;
+        display:block;
+        font-size:9px !important;
+        letter-spacing:.3px;
         white-space:nowrap;
     }
 
-    /* IMPORTANT: mobile hero stays LEFT + RIGHT */
+    /* Hero: content stays complete; profile remains on the right */
     .hero{
         width:100%;
         max-width:none;
         min-height:auto;
-        padding:58px 12px 55px;
+        margin:0;
+        padding:92px 10px 45px;
         display:grid;
-        grid-template-columns:minmax(0,1fr) 150px;
+        grid-template-columns:minmax(0,1fr) 140px;
+        gap:10px;
         align-items:center;
-        gap:14px;
         text-align:left;
-        overflow:hidden;
+        overflow:visible;
     }
 
     .hero-content{
-        width:100%;
         min-width:0;
-        margin:0;
-        text-align:left;
+        width:100%;
+        max-width:none;
     }
 
     .hero-small{
-        font-size:7px;
-        letter-spacing:1.2px;
-        line-height:1.6;
         margin-bottom:14px;
+        font-size:6.7px;
+        line-height:1;
+        letter-spacing:1.05px;
+        white-space:nowrap;
+        width:max-content;
+        max-width:none;
+        overflow:visible;
     }
 
     .hero h1{
-        font-size:clamp(22px,7vw,34px);
-        line-height:1.05;
+        width:100%;
+        margin:0;
+        font-size:clamp(22px,7.5vw,31px);
+        line-height:1.06;
         letter-spacing:-1px;
-        white-space:normal;
+        white-space:nowrap;
     }
 
     .name-marquee{
         width:100%;
+        max-width:100%;
         margin-top:15px;
         padding:9px 0;
+        overflow:hidden;
+    }
+
+    .marquee-track{
+        width:max-content;
+        white-space:nowrap;
     }
 
     .marquee-track span{
         font-size:7px;
         letter-spacing:1px;
+        margin-right:55px;
+        white-space:nowrap;
     }
 
     .hero-description{
         width:100%;
         max-width:none;
-        margin:17px 0;
-        font-size:11px;
-        line-height:1.75;
+        margin:15px 0;
+        font-size:10px;
+        line-height:1.65;
         text-align:left;
         overflow-wrap:anywhere;
+        word-break:normal;
     }
 
     .hero-buttons{
+        width:100%;
         display:flex;
         flex-direction:column;
-        align-items:stretch;
-        width:100%;
-        gap:8px;
+        gap:7px;
     }
 
     .hero-buttons .btn{
@@ -2309,59 +2350,115 @@ footer strong{
         padding:10px 8px;
         font-size:8px;
         text-align:center;
+        white-space:nowrap;
     }
 
     .profile-area{
-        width:150px;
+        width:140px;
+        min-width:140px;
+        height:270px;
         margin:0 !important;
         padding:0;
         display:flex;
         justify-content:center;
         align-items:center;
         transform:none !important;
+        opacity:1 !important;
     }
 
     .profile-card{
-        width:150px;
-        height:260px;
+        width:140px;
+        height:250px;
         max-width:none;
-        border-radius:20px;
-        display:flex;
-        align-items:flex-start;
-        justify-content:center;
+        border-radius:19px;
+        overflow:hidden;
     }
 
-    .profile-image-wrap{
-        width:138px;
-        height:138px;
-        margin-top:38px;
-    }
-
+    .profile-backdrop,
     .profile-image{
-        width:132px;
-        height:132px;
-        border-width:4px;
+        width:120px;
+        height:120px;
+        top:38px;
     }
 
-    section{padding:70px 0;}
+    .profile-card::before,
+    .profile-card::after{
+        opacity:.09;
+    }
 
-    .container{width:calc(100% - 24px);}
+    /* Prevent all regular content sections from becoming wider than the phone */
+    section,
+    .section-heading,
+    .about-grid,
+    .skills-layout,
+    .projects-grid,
+    .hr-grid,
+    .achievements,
+    .contact-box,
+    .timeline,
+    .glass-card,
+    .project,
+    .achievement,
+    .timeline-card,
+    .internship-card{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+    }
+
+    .section-heading h2{
+        font-size:31px;
+        line-height:1.12;
+        overflow-wrap:anywhere;
+    }
+
+    .section-heading p,
+    .about-text,
+    .timeline-card p,
+    .internship-description,
+    .project p,
+    .hr-title p,
+    .hr-value p,
+    .achievement p,
+    .contact-box p{
+        overflow-wrap:anywhere;
+        word-break:normal;
+    }
+
+    .internship-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .contact-box{
+        padding:22px;
+    }
+
+    .contact-box h2{
+        font-size:30px;
+    }
+
+    .timeline-item{
+        padding-left:42px;
+    }
 }
 
-@media(max-width:390px){
+@media (max-width:390px){
     .hero{
-        grid-template-columns:minmax(0,1fr) 132px;
-        gap:10px;
+        grid-template-columns:minmax(0,1fr) 125px;
+        gap:8px;
         padding-left:8px;
         padding-right:8px;
     }
 
-    .profile-area,.profile-card{width:132px;}
-    .profile-card{height:245px;}
-    .profile-image-wrap{width:122px;height:122px;}
-    .profile-image{width:116px;height:116px;}
-    .hero-description{font-size:10px;}
-    .nav-links{gap:16px;}
+    .profile-area{width:125px;min-width:125px;}
+    .profile-card{width:125px;height:235px;}
+    .profile-backdrop,
+    .profile-image{width:108px;height:108px;top:36px;}
+
+    .hero-small{font-size:6.2px;letter-spacing:.9px;}
+    .hero h1{font-size:21px;}
+    .hero-description{font-size:9.5px;}
 }
 
 </style>
@@ -2484,8 +2581,7 @@ EXPLORE PROFILE →
 
 <a
 href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
-target="_blank"
-rel="noopener noreferrer"
+target="_blank" rel="noopener noreferrer"
 class="btn">
 
 LINKEDIN ↗
@@ -2495,8 +2591,7 @@ LINKEDIN ↗
 
 <a
 href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
-target="_blank"
-rel="noopener noreferrer"
+target="_blank" rel="noopener noreferrer"
 class="btn">
 
 GITHUB ↗
@@ -2514,21 +2609,19 @@ GITHUB ↗
      PROFILE CARD
 ===================================================== -->
 
-<div class="profile-area reveal">
-
+<div class="profile-area">
 
 <div class="profile-card">
 
-    <div class="profile-image-wrap">
-        <div class="profile-image">
-            <img src="./profile.jpg" alt="R. Janaga Priya">
-        </div>
-    </div>
+<div class="profile-backdrop"></div>
 
+<div class="profile-image">
+<img src="./profile.jpg" alt="R. Janaga Priya">
 </div>
 
 </div>
 
+</div>
 </header>
 
 
@@ -3861,7 +3954,6 @@ janagapriya290@gmail.com
 class="contact-link"
 href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
 target="_blank"
-rel="noopener noreferrer"
 >
 
 <div class="contact-icon">
@@ -3891,9 +3983,8 @@ R. Janaga Priya ↗
 
 <a
 class="contact-link"
-href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
+href="https://github.com/R-JanagaPriya"
 target="_blank"
-rel="noopener noreferrer"
 >
 
 <div class="contact-icon">
@@ -4056,7 +4147,60 @@ marqueeTrack.style.animationPlayState =
 
 
 
-/* PROFILE HOVER - handled by CSS */
+/* =====================================================
+   PROFILE TILT
+===================================================== */
+
+const profile =
+document.querySelector(".profile-card");
+
+
+profile.addEventListener(
+"mousemove",
+(e) => {
+
+
+const rect =
+profile.getBoundingClientRect();
+
+
+const x =
+e.clientX - rect.left;
+
+
+const y =
+e.clientY - rect.top;
+
+
+const rotateX =
+((y / rect.height) - .5) * -5;
+
+
+const rotateY =
+((x / rect.width) - .5) * 5;
+
+
+profile.style.transform =
+
+`translateY(-10px)
+ rotateX(${rotateX}deg)
+ rotateY(${rotateY}deg)`;
+
+
+}
+);
+
+
+profile.addEventListener(
+"mouseleave",
+() => {
+
+profile.style.transform =
+"translateY(0) rotateX(0) rotateY(0)";
+
+}
+);
+
 
 </script>
 
