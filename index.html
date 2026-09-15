@@ -533,318 +533,122 @@ a{
    PROFILE
 ========================================================= */
 
-.profile-area {
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    transform: translateX(-25px);
+.profile-area{
+    width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    position:relative;
+    min-width:0;
 }
 
-
 .profile-card{
-
     width:370px;
-
     height:480px;
-
     border:1px solid rgba(0,234,255,.32);
-
     border-radius:25px;
-
     background:
-
-    linear-gradient(
-        145deg,
-        rgba(13,23,43,.95),
-        rgba(4,7,15,.98)
-    );
-
+        linear-gradient(
+            145deg,
+            rgba(13,23,43,.95),
+            rgba(4,7,15,.98)
+        );
     position:relative;
-
     overflow:hidden;
-
     transition:.45s;
-
     box-shadow:
-
         0 0 30px rgba(0,234,255,.07),
-
         inset 0 0 45px rgba(135,76,255,.04);
 }
 
-
 .profile-card::before{
-
     content:"";
-
     position:absolute;
-
     width:240px;
-
     height:240px;
-
     border-radius:50%;
-
     background:var(--cyan);
-
     filter:blur(100px);
-
     opacity:.12;
-
     top:-100px;
-
     right:-80px;
-
+    pointer-events:none;
 }
-
 
 .profile-card::after{
-
     content:"";
-
     position:absolute;
-
     width:180px;
-
     height:180px;
-
     border-radius:50%;
-
     background:var(--violet);
-
     filter:blur(100px);
-
     opacity:.10;
-
     bottom:-80px;
-
     left:-70px;
+    pointer-events:none;
 }
 
-
 .profile-card:hover{
-
     transform:
         translateY(-10px)
         rotateX(2deg)
         rotateY(-2deg);
-
     border-color:var(--cyan);
-
     box-shadow:
-
         0 0 25px rgba(0,234,255,.2),
-
         0 0 70px rgba(135,76,255,.14);
 }
 
-
-.profile-top{
-
-    padding:22px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    position:relative;
-
-    z-index:2;
-}
-
-
-.profile-tag{
-
-    font-family:var(--font-tech);
-
-    font-size:9px;
-
-    letter-spacing:2px;
-
-    color:var(--cyan);
-}
-
-
-.status{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    font-size:9px;
-
-    color:#a9b4c8;
-}
-
-
-.status-dot{
-
-    width:7px;
-
-    height:7px;
-
+/* circular photo presentation */
+.profile-backdrop{
+    position:absolute;
+    width:300px;
+    height:300px;
+    left:50%;
+    top:74px;
+    transform:translateX(-50%);
     border-radius:50%;
-
-    background:#00ff9d;
-
-    box-shadow:0 0 12px #00ff9d;
+    background:#ffffff;
+    box-shadow:
+        0 0 30px rgba(255,255,255,.12),
+        0 0 55px rgba(0,234,255,.08);
+    z-index:1;
 }
-
-
-/* =========================================================
-   PROFILE IMAGE
-========================================================= */
 
 .profile-image{
-
-    width:245px;
-
-    height:245px;
-
-    margin:38px auto 22px;
-
-    padding:6px;
-
+    position:absolute;
+    width:300px;
+    height:300px;
+    left:50%;
+    top:74px;
+    transform:translateX(-50%);
     border-radius:50%;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        var(--cyan),
-        var(--blue),
-        var(--violet),
-        var(--pink)
-    );
-
-    box-shadow:
-
-        0 0 25px rgba(0,234,255,.3),
-
-        0 0 60px rgba(135,76,255,.14);
-
-    animation:profileFloat 4s ease-in-out infinite;
-
-    position:relative;
-
+    overflow:hidden;
     z-index:2;
+    border:6px solid transparent;
+    background:
+        linear-gradient(#050914,#050914) padding-box,
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--blue),
+            var(--violet),
+            var(--pink)
+        ) border-box;
+    box-shadow:
+        0 0 25px rgba(0,234,255,.25),
+        0 0 55px rgba(135,76,255,.14);
 }
-
 
 .profile-image img{
-
     width:100%;
-
     height:100%;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:5px solid #050914;
-}
-
-
-@keyframes profileFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-}
-
-
-.profile-info{
-
-    text-align:center;
-
-    position:relative;
-
-    z-index:2;
-}
-
-
-.profile-info h2{
-
-    font-family:var(--font-title);
-
-    font-size:23px;
-}
-
-
-.profile-info p{
-
-    color:var(--cyan);
-
-    font-family:var(--font-tech);
-
-    font-size:9px;
-
-    letter-spacing:2px;
-
-    margin-top:7px;
-}
-
-
-.profile-bottom{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:0;
-
-    width:100%;
-
-    padding:18px;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    border-top:1px solid var(--line);
-
-    background:rgba(0,0,0,.25);
-
-    z-index:3;
-}
-
-
-.profile-stat{
-
-    text-align:center;
-}
-
-
-.profile-stat strong{
-
-    font-family:var(--font-tech);
-
-    font-size:15px;
-
-    color:white;
-}
-
-
-.profile-stat small{
-
     display:block;
-
-    margin-top:4px;
-
-    color:#77849b;
-
-    font-size:8px;
+    object-fit:cover;
+    object-position:center center;
+    border-radius:50%;
 }
-
 
 /* =========================================================
    SECTION
@@ -1939,44 +1743,51 @@ footer strong{
    RESPONSIVE
 ========================================================= */
 
+/* Tablet / small desktop */
 @media(max-width:1000px){
-
     .hero{
+        grid-template-columns:minmax(0,1.45fr) minmax(250px,.75fr);
+        gap:24px;
+        min-height:auto;
+        padding-top:105px;
+        align-items:center;
+    }
 
-        grid-template-columns:1fr;
-
-        text-align:center;
+    .hero-content,
+    .profile-area{
+        min-width:0;
     }
 
     .hero-description{
-
-        margin-left:auto;
-
-        margin-right:auto;
-    }
-
-    .hero-buttons{
-
-        justify-content:center;
+        max-width:none;
+        margin-left:0;
+        margin-right:0;
     }
 
     .profile-area{
-
-        margin-top:30px;
+        justify-content:center;
+        transform:none;
     }
 
+    .profile-card{
+        width:310px;
+        height:430px;
+    }
+
+    .profile-backdrop,
+    .profile-image{
+        width:250px;
+        height:250px;
+        top:72px;
+    }
 }
 
-
 @media(max-width:900px){
-
     .nav-links{
-
         gap:14px;
     }
 
     .nav-links a{
-
         font-size:10px;
     }
 
@@ -1984,260 +1795,59 @@ footer strong{
     .skills-layout,
     .hr-grid,
     .contact-box{
-
         grid-template-columns:1fr;
     }
 
     .projects-grid{
-
         grid-template-columns:1fr;
     }
 
     .achievements{
-
         grid-template-columns:repeat(2,1fr);
     }
-
 }
 
-
+/* Phone */
 @media(max-width:650px){
 
-    .navbar{
-
-        position:relative;
-    }
-
-    .nav-inner{
-
-        padding:18px 0;
-
-        flex-direction:column;
-
-        gap:15px;
-    }
-
-    .nav-links{
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-        gap:12px 18px;
-    }
-
-    .hero{
-
-        padding-top:80px;
-    }
-
-    .hero h1{
-
-        font-size:38px;
-
-        letter-spacing:-2px;
-
-        white-space:normal;
-    }
-
-    .profile-card{
-
-        width:100%;
-
-        max-width:350px;
-
-        height:450px;
-    }
-
-    .profile-image{
-
-        width:220px;
-
-        height:220px;
-    }
-
-    section{
-
-        padding:75px 0;
-    }
-
-    .section-heading h2{
-
-        font-size:34px;
-    }
-
-    .achievements{
-
-        grid-template-columns:1fr;
-    }
-
-    .hr-values{
-
-        grid-template-columns:1fr;
-    }
-
-    .contact-box{
-
-        padding:25px;
-    }
-
-    .contact-box h2{
-
-        font-size:32px;
-    }
-
-    .timeline-item{
-
-        padding-left:48px;
-    }
-
-    .timeline::before{
-
-        left:12px;
-    }
-
-    .timeline-dot{
-
-        left:3px;
-    }
-
-}
-
-
-
-
-/* =========================================================
-   FINAL RESPONSIVE OVERRIDES
-   Keep content complete and visible at every width
-========================================================= */
-
-.profile-card{
-    position:relative;
-    isolation:isolate;
-}
-
-.profile-backdrop{
-    position:absolute;
-    width:300px;
-    height:300px;
-    top:65px;
-    left:50%;
-    transform:translateX(-50%);
-    border-radius:50%;
-    background:#fff;
-    z-index:1;
-    box-shadow:0 12px 35px rgba(0,0,0,.22);
-}
-
-.profile-image{
-    position:absolute;
-    width:300px;
-    height:300px;
-    top:65px;
-    left:50%;
-    transform:translateX(-50%);
-    border-radius:50%;
-    overflow:hidden;
-    z-index:2;
-    margin:0;
-    padding:0;
-    background:transparent;
-    box-shadow:none;
-    animation:none;
-}
-
-.profile-image img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-    object-position:center center;
-    border:0;
-    border-radius:50%;
-}
-
-.profile-top,
-.profile-info,
-.profile-bottom{
-    display:none;
-}
-
-@media (max-width:1000px){
-    .hero{
-        display:grid;
-        grid-template-columns:minmax(0,1fr) 250px;
-        gap:18px;
-        align-items:center;
-        min-height:auto;
-        padding-top:105px;
-        text-align:left;
-    }
-
-    .hero-content{min-width:0;}
-    .profile-area{
-        min-width:0;
-        margin-top:0 !important;
-        transform:none !important;
-        justify-content:center;
-    }
-
-    .profile-card{
-        width:250px;
-        height:360px;
-        max-width:100%;
-    }
-
-    .profile-backdrop,
-    .profile-image{
-        width:210px;
-        height:210px;
-        top:58px;
-    }
-
-    .hero-content.reveal,
-    .profile-area.reveal{
-        opacity:1 !important;
-        transform:none !important;
-    }
-}
-
-@media (max-width:650px){
-    html,body{
+    html,
+    body{
         width:100%;
         max-width:100%;
         overflow-x:hidden;
     }
 
     .container{
-        width:calc(100% - 20px);
-        max-width:none;
+        width:100%;
+        max-width:100%;
+        margin:0;
+        padding-left:16px;
+        padding-right:16px;
     }
 
-    /* One-line professional navigation */
+    /* one-line navigation */
     .navbar{
-        position:fixed !important;
+        position:sticky;
         top:0;
-        left:0;
-        right:0;
         width:100%;
+        overflow:hidden;
     }
 
     .nav-inner{
-        min-height:62px;
         width:100%;
-        padding:12px 10px;
+        min-height:58px;
+        padding:12px 16px;
         display:flex;
         flex-direction:row;
         align-items:center;
         justify-content:flex-start;
-        gap:14px;
+        gap:18px;
         overflow:hidden;
     }
 
     .brand{
         flex:0 0 auto;
-        font-size:11px;
-        letter-spacing:1.4px;
+        font-size:12px;
     }
 
     .nav-links{
@@ -2245,222 +1855,278 @@ footer strong{
         min-width:0;
         width:auto;
         display:flex;
-        flex-wrap:nowrap !important;
-        justify-content:flex-start !important;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
         align-items:center;
-        gap:16px !important;
+        gap:16px;
         overflow-x:auto;
         overflow-y:hidden;
-        white-space:nowrap;
         scrollbar-width:none;
-        -ms-overflow-style:none;
+        white-space:nowrap;
+        -webkit-overflow-scrolling:touch;
     }
 
-    .nav-links::-webkit-scrollbar{display:none;}
+    .nav-links::-webkit-scrollbar{
+        display:none;
+    }
 
-    .nav-links li{flex:0 0 auto;}
+    .nav-links li{
+        flex:0 0 auto;
+    }
+
     .nav-links a{
         display:block;
-        font-size:9px !important;
-        letter-spacing:.3px;
+        font-size:9px;
+        letter-spacing:.5px;
         white-space:nowrap;
     }
 
-    /* Hero: content stays complete; profile remains on the right */
+    /* Desktop-like two-column hero */
     .hero{
         width:100%;
-        max-width:none;
+        max-width:100%;
         min-height:auto;
-        margin:0;
-        padding:92px 10px 45px;
+        padding:48px 16px 50px;
         display:grid;
-        grid-template-columns:minmax(0,1fr) 140px;
-        gap:10px;
+        grid-template-columns:minmax(0,1.55fr) minmax(145px,.72fr);
         align-items:center;
+        gap:12px;
         text-align:left;
-        overflow:visible;
+        overflow:hidden;
     }
 
     .hero-content{
-        min-width:0;
         width:100%;
-        max-width:none;
+        min-width:0;
+        margin:0;
     }
 
     .hero-small{
-        margin-bottom:14px;
-        font-size:6.7px;
-        line-height:1;
-        letter-spacing:1.05px;
+        width:100%;
+        margin-bottom:16px;
+        font-size:8px;
+        line-height:1.45;
+        letter-spacing:1.5px;
         white-space:nowrap;
-        width:max-content;
-        max-width:none;
-        overflow:visible;
+        overflow:hidden;
+        text-overflow:clip;
     }
 
     .hero h1{
         width:100%;
         margin:0;
-        font-size:clamp(22px,7.5vw,31px);
-        line-height:1.06;
-        letter-spacing:-1px;
+        font-size:clamp(27px,7vw,38px);
+        line-height:1.08;
+        letter-spacing:-1.4px;
         white-space:nowrap;
     }
 
+    /* Keep marquee running to the end, clipped only inside itself */
     .name-marquee{
         width:100%;
         max-width:100%;
-        margin-top:15px;
-        padding:9px 0;
         overflow:hidden;
+        margin-top:18px;
+        padding:10px 0;
+        border-top:1px solid var(--line);
+        border-bottom:1px solid var(--line);
     }
 
     .marquee-track{
         width:max-content;
-        white-space:nowrap;
+        display:flex;
+        animation:quoteMove 18s linear infinite;
+        will-change:transform;
     }
 
     .marquee-track span{
-        font-size:7px;
+        flex:0 0 auto;
+        font-size:8px;
         letter-spacing:1px;
-        margin-right:55px;
+        margin-right:65px;
         white-space:nowrap;
     }
 
     .hero-description{
         width:100%;
         max-width:none;
-        margin:15px 0;
-        font-size:10px;
+        margin:18px 0;
+        font-size:12px;
         line-height:1.65;
         text-align:left;
         overflow-wrap:anywhere;
-        word-break:normal;
     }
 
     .hero-buttons{
         width:100%;
         display:flex;
         flex-direction:column;
-        gap:7px;
+        align-items:stretch;
+        gap:8px;
     }
 
     .hero-buttons .btn{
         width:100%;
-        padding:10px 8px;
-        font-size:8px;
+        padding:11px 10px;
+        font-size:9px;
         text-align:center;
         white-space:nowrap;
     }
 
+    /* Profile remains on the RIGHT */
     .profile-area{
-        width:140px;
-        min-width:140px;
-        height:270px;
+        width:100%;
+        min-width:0;
         margin:0 !important;
         padding:0;
         display:flex;
         justify-content:center;
         align-items:center;
         transform:none !important;
-        opacity:1 !important;
     }
 
     .profile-card{
-        width:140px;
-        height:250px;
-        max-width:none;
-        border-radius:19px;
-        overflow:hidden;
+        width:100%;
+        max-width:170px;
+        height:260px;
+        margin:0;
+        border-radius:18px;
     }
 
     .profile-backdrop,
     .profile-image{
-        width:120px;
-        height:120px;
-        top:38px;
+        width:132px;
+        height:132px;
+        top:62px;
     }
 
-    .profile-card::before,
-    .profile-card::after{
-        opacity:.09;
+    .profile-image{
+        border-width:4px;
     }
 
-    /* Prevent all regular content sections from becoming wider than the phone */
-    section,
-    .section-heading,
-    .about-grid,
-    .skills-layout,
-    .projects-grid,
-    .hr-grid,
-    .achievements,
-    .contact-box,
-    .timeline,
-    .glass-card,
-    .project,
-    .achievement,
-    .timeline-card,
-    .internship-card{
+    /* All normal content stays within phone width */
+    section{
         width:100%;
-        max-width:100%;
-        min-width:0;
+        padding:70px 0;
+        overflow:hidden;
+    }
+
+    .section-heading{
+        width:100%;
+        margin-bottom:35px;
     }
 
     .section-heading h2{
-        font-size:31px;
-        line-height:1.12;
-        overflow-wrap:anywhere;
+        width:100%;
+        font-size:32px;
+        line-height:1.15;
+        letter-spacing:-1.2px;
     }
 
-    .section-heading p,
-    .about-text,
-    .timeline-card p,
-    .internship-description,
-    .project p,
-    .hr-title p,
-    .hr-value p,
-    .achievement p,
-    .contact-box p{
-        overflow-wrap:anywhere;
-        word-break:normal;
+    .section-heading p{
+        width:100%;
+        font-size:13px;
+        line-height:1.6;
     }
 
-    .internship-header{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-
+    .glass-card,
+    .timeline-card,
+    .project,
+    .achievement,
     .contact-box{
-        padding:22px;
+        width:100%;
+        max-width:100%;
     }
 
-    .contact-box h2{
-        font-size:30px;
+    .about-text{
+        text-align:left;
+        font-size:14px;
+        line-height:1.75;
     }
 
     .timeline-item{
-        padding-left:42px;
+        padding-left:44px;
+    }
+
+    .timeline::before{
+        left:11px;
+    }
+
+    .timeline-dot{
+        left:2px;
+    }
+
+    .projects-grid,
+    .skills-layout,
+    .hr-grid,
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .achievements{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        padding:24px;
+    }
+
+    .contact-box h2{
+        font-size:32px;
+    }
+
+    footer{
+        width:100%;
+        padding-left:16px;
+        padding-right:16px;
     }
 }
 
-@media (max-width:390px){
+/* Very small phones */
+@media(max-width:380px){
     .hero{
-        grid-template-columns:minmax(0,1fr) 125px;
+        grid-template-columns:minmax(0,1.5fr) minmax(125px,.7fr);
         gap:8px;
-        padding-left:8px;
-        padding-right:8px;
     }
 
-    .profile-area{width:125px;min-width:125px;}
-    .profile-card{width:125px;height:235px;}
+    .hero-small{
+        font-size:7px;
+        letter-spacing:1px;
+    }
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .hero-description{
+        font-size:11px;
+        line-height:1.58;
+    }
+
+    .hero-buttons .btn{
+        font-size:8px;
+    }
+
+    .profile-card{
+        max-width:145px;
+        height:235px;
+    }
+
     .profile-backdrop,
-    .profile-image{width:108px;height:108px;top:36px;}
+    .profile-image{
+        width:112px;
+        height:112px;
+        top:56px;
+    }
 
-    .hero-small{font-size:6.2px;letter-spacing:.9px;}
-    .hero h1{font-size:21px;}
-    .hero-description{font-size:9.5px;}
+    .nav-links{
+        gap:13px;
+    }
+
+    .nav-links a{
+        font-size:8px;
+    }
 }
-
 </style>
 
 </head>
@@ -2581,7 +2247,8 @@ EXPLORE PROFILE →
 
 <a
 href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
-target="_blank" rel="noopener noreferrer"
+target="_blank"
+rel="noopener noreferrer"
 class="btn">
 
 LINKEDIN ↗
@@ -2591,7 +2258,8 @@ LINKEDIN ↗
 
 <a
 href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
-target="_blank" rel="noopener noreferrer"
+target="_blank"
+rel="noopener noreferrer"
 class="btn">
 
 GITHUB ↗
@@ -2609,18 +2277,17 @@ GITHUB ↗
      PROFILE CARD
 ===================================================== -->
 
-<div class="profile-area">
+<div class="profile-area reveal">
+    <div class="profile-card">
+        <div class="profile-backdrop"></div>
 
-<div class="profile-card">
-
-<div class="profile-backdrop"></div>
-
-<div class="profile-image">
-<img src="./profile.jpg" alt="R. Janaga Priya">
-</div>
-
-</div>
-
+        <div class="profile-image">
+            <img
+                src="./profile.jpg"
+                alt="R. Janaga Priya"
+                onerror="this.onerror=null;this.src='./profile.png';">
+        </div>
+    </div>
 </div>
 </header>
 
@@ -3473,6 +3140,7 @@ web experiences.
 <a
 href="https://github.com/R-JanagaPriya/Perfume_Website"
 target="_blank"
+rel="noopener noreferrer"
 class="project-link">
 
 VIEW GITHUB PROJECT ↗
@@ -3946,6 +3614,8 @@ janagapriya290@gmail.com
 
 </a>
 
+                    <!-- LINKEDIN -->
+
 
 
 <!-- LINKEDIN -->
@@ -3983,7 +3653,7 @@ R. Janaga Priya ↗
 
 <a
 class="contact-link"
-href="https://github.com/R-JanagaPriya"
+href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
 target="_blank"
 >
 
@@ -4151,56 +3821,26 @@ marqueeTrack.style.animationPlayState =
    PROFILE TILT
 ===================================================== */
 
-const profile =
-document.querySelector(".profile-card");
+const profile = document.querySelector(".profile-card");
 
+if (profile && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    profile.addEventListener("mousemove", (e) => {
+        const rect = profile.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-profile.addEventListener(
-"mousemove",
-(e) => {
+        const rotateX = ((y / rect.height) - .5) * -5;
+        const rotateY = ((x / rect.width) - .5) * 5;
 
+        profile.style.transform =
+            `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
 
-const rect =
-profile.getBoundingClientRect();
-
-
-const x =
-e.clientX - rect.left;
-
-
-const y =
-e.clientY - rect.top;
-
-
-const rotateX =
-((y / rect.height) - .5) * -5;
-
-
-const rotateY =
-((x / rect.width) - .5) * 5;
-
-
-profile.style.transform =
-
-`translateY(-10px)
- rotateX(${rotateX}deg)
- rotateY(${rotateY}deg)`;
-
-
+    profile.addEventListener("mouseleave", () => {
+        profile.style.transform =
+            "translateY(0) rotateX(0) rotateY(0)";
+    });
 }
-);
-
-
-profile.addEventListener(
-"mouseleave",
-() => {
-
-profile.style.transform =
-"translateY(0) rotateX(0) rotateY(0)";
-
-}
-);
-
 
 </script>
 
