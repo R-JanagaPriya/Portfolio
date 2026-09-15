@@ -533,98 +533,318 @@ a{
    PROFILE
 ========================================================= */
 
-.profile-area{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    position:relative;
-    min-width:0;
+.profile-area {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    transform: translateX(-25px);
 }
+
 
 .profile-card{
+
     width:370px;
+
     height:480px;
+
     border:1px solid rgba(0,234,255,.32);
+
     border-radius:25px;
-    background:linear-gradient(145deg,rgba(13,23,43,.95),rgba(4,7,15,.98));
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(13,23,43,.95),
+        rgba(4,7,15,.98)
+    );
+
     position:relative;
+
     overflow:hidden;
+
     transition:.45s;
-    box-shadow:0 0 30px rgba(0,234,255,.07),inset 0 0 45px rgba(135,76,255,.04);
-    flex:0 0 auto;
+
+    box-shadow:
+
+        0 0 30px rgba(0,234,255,.07),
+
+        inset 0 0 45px rgba(135,76,255,.04);
 }
+
 
 .profile-card::before{
+
     content:"";
+
     position:absolute;
+
     width:240px;
+
     height:240px;
+
     border-radius:50%;
+
     background:var(--cyan);
+
     filter:blur(100px);
+
     opacity:.12;
+
     top:-100px;
+
     right:-80px;
+
 }
 
+
 .profile-card::after{
+
     content:"";
+
     position:absolute;
+
     width:180px;
+
     height:180px;
+
     border-radius:50%;
+
     background:var(--violet);
+
     filter:blur(100px);
+
     opacity:.10;
+
     bottom:-80px;
+
     left:-70px;
 }
 
+
 .profile-card:hover{
-    transform:translateY(-10px) rotateX(2deg) rotateY(-2deg);
+
+    transform:
+        translateY(-10px)
+        rotateX(2deg)
+        rotateY(-2deg);
+
     border-color:var(--cyan);
-    box-shadow:0 0 25px rgba(0,234,255,.2),0 0 70px rgba(135,76,255,.14);
+
+    box-shadow:
+
+        0 0 25px rgba(0,234,255,.2),
+
+        0 0 70px rgba(135,76,255,.14);
 }
 
-.profile-backdrop{
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:#ffffff;
-    left:50%;
-    top:65px;
-    transform:translateX(-50%);
-    z-index:1;
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+.profile-top{
+
+    padding:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
 }
+
+
+.profile-tag{
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    color:var(--cyan);
+}
+
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    font-size:9px;
+
+    color:#a9b4c8;
+}
+
+
+.status-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#00ff9d;
+
+    box-shadow:0 0 12px #00ff9d;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
 
 .profile-image{
-    position:absolute;
-    width:320px;
-    height:385px;
-    left:50%;
-    bottom:0;
-    transform:translateX(-50%);
+
+    width:245px;
+
+    height:245px;
+
+    margin:38px auto 22px;
+
+    padding:6px;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--blue),
+        var(--violet),
+        var(--pink)
+    );
+
+    box-shadow:
+
+        0 0 25px rgba(0,234,255,.3),
+
+        0 0 60px rgba(135,76,255,.14);
+
+    animation:profileFloat 4s ease-in-out infinite;
+
+    position:relative;
+
     z-index:2;
-    pointer-events:none;
 }
+
 
 .profile-image img{
+
     width:100%;
+
     height:100%;
-    display:block;
-    object-fit:contain;
-    object-position:center bottom;
-    background:transparent;
-    border:0;
-    border-radius:0;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #050914;
 }
 
+
 @keyframes profileFloat{
-    0%,100%{transform:translateX(-50%) translateY(0);}
-    50%{transform:translateX(-50%) translateY(-8px);}
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
 }
+
+
+.profile-info{
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.profile-info h2{
+
+    font-family:var(--font-title);
+
+    font-size:23px;
+}
+
+
+.profile-info p{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-top:7px;
+}
+
+
+.profile-bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    border-top:1px solid var(--line);
+
+    background:rgba(0,0,0,.25);
+
+    z-index:3;
+}
+
+
+.profile-stat{
+
+    text-align:center;
+}
+
+
+.profile-stat strong{
+
+    font-family:var(--font-tech);
+
+    font-size:15px;
+
+    color:white;
+}
+
+
+.profile-stat small{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#77849b;
+
+    font-size:8px;
+}
+
 
 /* =========================================================
    SECTION
@@ -731,8 +951,6 @@ section{
     color:#b6c0d1;
 
     line-height:1.9;
-
-    text-align:justify;
 
     font-size:15px;
 }
@@ -1722,784 +1940,428 @@ footer strong{
 ========================================================= */
 
 @media(max-width:1000px){
-    .hero{
-        grid-template-columns:minmax(0,1fr) minmax(250px,.72fr);
-        gap:28px;
-        min-height:auto;
-        padding-top:105px;
-        align-items:center;
-    }
-
-    .hero-content{min-width:0;}
-    .hero-description{max-width:none;margin-left:0;margin-right:0;text-align:left;}
-    .hero-buttons{justify-content:flex-start;}
-    .profile-area{justify-content:flex-end;margin-top:0;}
-}
-
-@media(max-width:850px){
-    .nav-inner{
-        width:100%;
-        max-width:none;
-        padding:14px 14px;
-        gap:18px;
-    }
-
-    .nav-links{
-        flex-wrap:nowrap;
-        overflow-x:auto;
-        overflow-y:hidden;
-        gap:22px;
-        white-space:nowrap;
-        max-width:100%;
-        scrollbar-width:none;
-        -webkit-overflow-scrolling:touch;
-        padding-bottom:2px;
-    }
-
-    .nav-links::-webkit-scrollbar{display:none;}
 
     .hero{
-        grid-template-columns:minmax(0,58%) minmax(0,42%);
-        gap:12px;
-        width:100%;
-        max-width:100%;
-        padding:95px 14px 50px;
-        margin:0;
-    }
 
-    .hero-small{font-size:7px;letter-spacing:1.1px;margin-bottom:14px;}
+        grid-template-columns:1fr;
 
-    .hero h1{
-        font-size:clamp(28px,7.3vw,42px);
-        letter-spacing:-1.5px;
-        white-space:normal;
-        line-height:1.04;
-    }
-
-    .name-marquee{margin-top:16px;padding:9px 0;}
-    .marquee-track span{font-size:7px;letter-spacing:1px;margin-right:60px;}
-
-    .hero-description{
-        max-width:none;
-        font-size:12px;
-        line-height:1.7;
-        margin:17px 0;
-        text-align:left;
-        overflow-wrap:normal;
-        word-break:normal;
-    }
-
-    .hero-buttons{
-        display:flex;
-        flex-direction:column;
-        align-items:stretch;
-        gap:8px;
-    }
-
-    .btn{
-        width:100%;
-        padding:10px 9px;
-        font-size:9px;
         text-align:center;
     }
 
-    .profile-area{
-        width:100%;
-        justify-content:flex-end;
-        margin:0 !important;
-        transform:none !important;
-        opacity:1 !important;
-        align-self:center;
-    }
-
-    .profile-card{
-        width:min(100%,300px);
-        height:400px;
-        border-radius:22px;
-    }
-
-    .profile-backdrop{
-        width:230px;
-        height:230px;
-        top:72px;
-    }
-
-    .profile-image{
-        width:245px;
-        height:310px;
-    }
-}
-
-@media(max-width:520px){
-    .nav-inner{
-        justify-content:flex-start;
-        align-items:stretch;
-    }
-
-    .brand{align-self:center;}
-
-    .nav-links{gap:18px;justify-content:flex-start;}
-
-    .hero{
-        grid-template-columns:minmax(0,56%) minmax(0,44%);
-        gap:8px;
-        padding:88px 8px 40px;
-    }
-
-    .hero-small{font-size:6px;letter-spacing:.8px;}
-
-    .hero h1{
-        font-size:clamp(25px,7.8vw,34px);
-        letter-spacing:-1.2px;
-    }
-
     .hero-description{
-        font-size:11px;
-        line-height:1.65;
-        margin:14px 0;
-    }
 
-    .marquee-track span{font-size:6px;}
+        margin-left:auto;
 
-    .btn{
-        padding:9px 6px;
-        font-size:8px;
-    }
-
-    .profile-card{
-        width:100%;
-        height:355px;
-        border-radius:20px;
-    }
-
-    .profile-backdrop{
-        width:185px;
-        height:185px;
-        top:56px;
-    }
-
-    .profile-image{
-        width:210px;
-        height:275px;
-    }
-}
-
-@media(max-width:380px){
-    .hero{
-        grid-template-columns:minmax(0,54%) minmax(0,46%);
-        gap:6px;
-        padding-left:6px;
-        padding-right:6px;
-    }
-
-    .hero-description{font-size:10px;line-height:1.6;}
-    .hero h1{font-size:24px;}
-    .profile-card{height:330px;}
-    .profile-backdrop{width:165px;height:165px;top:52px;}
-    .profile-image{width:188px;height:252px;}
-}
-
-/* Keep hero visible immediately on mobile */
-@media(max-width:850px){
-    .hero-content.reveal,
-    .profile-area.reveal{
-        opacity:1 !important;
-        transform:none !important;
-    }
-}
-
-
-/* =========================================================
-   FINAL MOBILE HERO / PROFILE OVERRIDE
-========================================================= */
-@media (max-width: 850px){
-    html,body{overflow-x:hidden;}
-
-    .navbar{position:fixed;top:0;left:0;width:100%;}
-    .nav-inner{
-        width:100%;
-        padding:12px 10px;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
-        gap:12px;
-        overflow:hidden;
-    }
-    .brand{flex:0 0 auto;font-size:11px;}
-    .nav-links{
-        flex:1 1 auto;
-        min-width:0;
-        display:flex;
-        flex-wrap:nowrap;
-        gap:16px;
-        overflow-x:auto;
-        overflow-y:hidden;
-        white-space:nowrap;
-        justify-content:flex-start;
-        scrollbar-width:none;
-        -webkit-overflow-scrolling:touch;
-    }
-    .nav-links::-webkit-scrollbar{display:none;}
-    .nav-links a{font-size:8px;letter-spacing:.5px;white-space:nowrap;}
-
-    .hero{
-        width:100%;
-        max-width:100%;
-        min-height:100vh;
-        margin:0;
-        padding:92px 12px 40px;
-        display:grid;
-        grid-template-columns:minmax(0,1fr) 150px;
-        gap:14px;
-        align-items:center;
-        text-align:left;
-    }
-
-    .hero-content{
-        min-width:0;
-        width:100%;
-        margin:0;
-        padding:0;
-        text-align:left;
-    }
-
-    .hero-small{
-        margin-bottom:12px;
-        font-size:6.5px;
-        letter-spacing:1px;
-        line-height:1.5;
-    }
-
-    .hero h1{
-        margin:0;
-        font-size:clamp(28px,7.7vw,42px);
-        line-height:1.04;
-        letter-spacing:-1.5px;
-        white-space:normal;
-        word-break:keep-all;
-    }
-
-    .name-marquee{
-        width:100%;
-        margin-top:14px;
-        padding:8px 0;
-        overflow:hidden;
-    }
-    .marquee-track span{font-size:6px;letter-spacing:.7px;}
-
-    .hero-description{
-        width:100%;
-        max-width:none;
-        margin:15px 0;
-        font-size:11px;
-        line-height:1.72;
-        text-align:left;
-        overflow-wrap:anywhere;
-        word-break:normal;
+        margin-right:auto;
     }
 
     .hero-buttons{
-        width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:stretch;
-        gap:7px;
-    }
-    .hero-buttons .btn{
-        width:100%;
-        padding:9px 7px;
-        font-size:8px;
-        text-align:center;
-    }
 
-    .profile-area{
-        display:flex;
         justify-content:center;
-        align-items:center;
-        width:150px;
-        min-width:0;
-        margin:0 !important;
-        padding:0;
-        opacity:1 !important;
-        transform:none !important;
-        align-self:center;
     }
 
-    .profile-card{
-        position:relative;
-        width:150px;
-        height:250px;
-        margin:0;
-        overflow:hidden;
-        border-radius:20px;
-        display:block;
-        opacity:1 !important;
-        visibility:visible !important;
+    .profile-area{
+
+        margin-top:30px;
     }
 
-    .profile-backdrop{
-        position:absolute;
-        width:122px;
-        height:122px;
-        left:50%;
-        top:48px;
-        transform:translateX(-50%);
-        border-radius:50%;
-        background:#fff;
-        z-index:1;
-        opacity:1;
-        visibility:visible;
-    }
-
-    .profile-image{
-        position:absolute;
-        width:145px;
-        height:215px;
-        left:50%;
-        bottom:0;
-        transform:translateX(-50%);
-        margin:0;
-        padding:0;
-        z-index:2;
-        opacity:1;
-        visibility:visible;
-        animation:none;
-    }
-
-    .profile-image img{
-        display:block !important;
-        width:100% !important;
-        height:100% !important;
-        object-fit:contain !important;
-        object-position:center bottom !important;
-        opacity:1 !important;
-        visibility:visible !important;
-        border:0 !important;
-        border-radius:0 !important;
-        background:transparent !important;
-    }
-}
-
-@media (max-width:520px){
-    .nav-inner{padding:11px 8px;gap:9px;}
-    .brand{font-size:10px;}
-    .nav-links{gap:14px;}
-    .nav-links a{font-size:7.5px;}
-
-    .hero{
-        grid-template-columns:minmax(0,1fr) 128px;
-        gap:9px;
-        padding:90px 8px 32px;
-    }
-    .hero-small{font-size:5.8px;letter-spacing:.7px;}
-    .hero h1{font-size:clamp(25px,8vw,34px);}
-    .hero-description{font-size:10px;line-height:1.65;}
-    .hero-buttons .btn{font-size:7.5px;padding:8px 5px;}
-
-    .profile-area,.profile-card{width:128px;}
-    .profile-card{height:220px;}
-    .profile-backdrop{width:105px;height:105px;top:44px;}
-    .profile-image{width:125px;height:190px;}
-}
-
-@media (max-width:390px){
-    .hero{grid-template-columns:minmax(0,1fr) 116px;gap:7px;padding-left:6px;padding-right:6px;}
-    .profile-area,.profile-card{width:116px;}
-    .profile-card{height:205px;}
-    .profile-backdrop{width:94px;height:94px;top:42px;}
-    .profile-image{width:112px;height:178px;}
-    .hero-description{font-size:9.3px;}
-}
-
-/* Make hero items visible immediately on small screens */
-@media (max-width:850px){
-    .hero-content.reveal,
-    .profile-area.reveal{opacity:1 !important;transform:none !important;}
 }
 
 
-/* =========================================================
-   FINAL CLEAN RESPONSIVE OVERRIDE
-   Profile = image clipped perfectly inside the circle
-========================================================= */
-
-.profile-area{
-    display:flex !important;
-    justify-content:flex-end !important;
-    align-items:center !important;
-    position:relative !important;
-    min-width:0 !important;
-    margin:0 !important;
-    transform:none !important;
-    opacity:1 !important;
-}
-
-.profile-card{
-    width:370px !important;
-    height:480px !important;
-    position:relative !important;
-    overflow:hidden !important;
-    flex:0 0 auto !important;
-}
-
-.profile-backdrop{
-    position:absolute !important;
-    width:300px !important;
-    height:300px !important;
-    left:50% !important;
-    top:65px !important;
-    transform:translateX(-50%) !important;
-    border-radius:50% !important;
-    background:#fff !important;
-    z-index:1 !important;
-    opacity:1 !important;
-}
-
-.profile-image{
-    position:absolute !important;
-    width:300px !important;
-    height:300px !important;
-    left:50% !important;
-    top:65px !important;
-    bottom:auto !important;
-    margin:0 !important;
-    padding:0 !important;
-    transform:translateX(-50%) !important;
-    border-radius:50% !important;
-    overflow:hidden !important;
-    background:transparent !important;
-    box-shadow:none !important;
-    z-index:3 !important;
-    animation:none !important;
-    opacity:1 !important;
-    visibility:visible !important;
-}
-
-.profile-image img{
-    display:block !important;
-    width:100% !important;
-    height:100% !important;
-    object-fit:cover !important;
-    object-position:center center !important;
-    border:0 !important;
-    border-radius:50% !important;
-    background:transparent !important;
-    opacity:1 !important;
-    visibility:visible !important;
-}
-
-/* Keep the profile content minimal: photo + circular backdrop */
-.profile-top,
-.profile-info,
-.profile-bottom{
-    display:none !important;
-}
-
-/* ---------------------------------------------------------
-   MOBILE: content on left + profile on right
---------------------------------------------------------- */
-
-@media (max-width:850px){
-
-    html,
-    body{
-        width:100%;
-        max-width:100%;
-        overflow-x:hidden;
-    }
-
-    .navbar{
-        position:fixed !important;
-        top:0;
-        left:0;
-        width:100%;
-        z-index:1000;
-    }
-
-    .nav-inner{
-        width:100% !important;
-        min-height:58px !important;
-        padding:10px 8px !important;
-        display:flex !important;
-        flex-direction:row !important;
-        align-items:center !important;
-        justify-content:flex-start !important;
-        gap:10px !important;
-        overflow:hidden !important;
-    }
-
-    .brand{
-        flex:0 0 auto !important;
-        font-size:10px !important;
-    }
+@media(max-width:900px){
 
     .nav-links{
-        flex:1 1 auto !important;
-        min-width:0 !important;
-        display:flex !important;
-        flex-direction:row !important;
-        flex-wrap:nowrap !important;
-        align-items:center !important;
-        justify-content:flex-start !important;
-        gap:15px !important;
-        overflow-x:auto !important;
-        overflow-y:hidden !important;
-        white-space:nowrap !important;
-        scrollbar-width:none !important;
-    }
 
-    .nav-links::-webkit-scrollbar{
-        display:none !important;
+        gap:14px;
     }
 
     .nav-links a{
-        flex:0 0 auto !important;
-        white-space:nowrap !important;
-        font-size:7.5px !important;
-        letter-spacing:.3px !important;
+
+        font-size:10px;
+    }
+
+    .about-grid,
+    .skills-layout,
+    .hr-grid,
+    .contact-box{
+
+        grid-template-columns:1fr;
+    }
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .achievements{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .navbar{
+
+        position:relative;
+    }
+
+    .nav-inner{
+
+        padding:18px 0;
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:12px 18px;
     }
 
     .hero{
-        width:100% !important;
-        max-width:1180px !important;
-        min-height:100vh !important;
-        margin:0 auto !important;
-        padding:90px 12px 35px !important;
-        display:grid !important;
-        grid-template-columns:minmax(0,1fr) minmax(125px,155px) !important;
-        gap:14px !important;
-        align-items:center !important;
-        text-align:left !important;
-    }
 
-    .hero-content{
-        width:100% !important;
-        min-width:0 !important;
-        margin:0 !important;
-        padding:0 !important;
-        text-align:left !important;
-    }
-
-    .hero-content.reveal{
-        opacity:1 !important;
-        transform:none !important;
-    }
-
-    .hero-small{
-        font-size:6.5px !important;
-        letter-spacing:.8px !important;
-        line-height:1.5 !important;
-        margin-bottom:12px !important;
+        padding-top:80px;
     }
 
     .hero h1{
-        width:100% !important;
-        margin:0 !important;
-        font-size:clamp(27px,7.8vw,40px) !important;
-        line-height:1.05 !important;
-        letter-spacing:-1.5px !important;
-        white-space:normal !important;
-    }
 
-    .name-marquee{
-        width:100% !important;
-        margin-top:15px !important;
-        padding:8px 0 !important;
-        overflow:hidden !important;
-    }
+        font-size:38px;
 
-    .marquee-track{
-        width:max-content !important;
-    }
+        letter-spacing:-2px;
 
-    .marquee-track span{
-        font-size:6px !important;
-        letter-spacing:.6px !important;
-        margin-right:55px !important;
-    }
-
-    .hero-description{
-        width:100% !important;
-        max-width:none !important;
-        margin:14px 0 16px !important;
-        font-size:10.5px !important;
-        line-height:1.65 !important;
-        text-align:left !important;
-        overflow-wrap:break-word !important;
-        word-break:normal !important;
-    }
-
-    .hero-buttons{
-        width:100% !important;
-        display:flex !important;
-        flex-direction:column !important;
-        align-items:stretch !important;
-        gap:7px !important;
-    }
-
-    .hero-buttons .btn{
-        width:100% !important;
-        padding:8px 7px !important;
-        font-size:8px !important;
-        text-align:center !important;
-    }
-
-    .profile-area{
-        width:100% !important;
-        min-width:0 !important;
-        display:flex !important;
-        justify-content:center !important;
-        align-items:center !important;
-        align-self:center !important;
-        margin:0 !important;
-        padding:0 !important;
-    }
-
-    .profile-area.reveal{
-        opacity:1 !important;
-        transform:none !important;
+        white-space:normal;
     }
 
     .profile-card{
-        width:100% !important;
-        max-width:155px !important;
-        height:260px !important;
-        margin:0 !important;
-        border-radius:20px !important;
-        overflow:hidden !important;
-    }
 
-    .profile-backdrop{
-        width:135px !important;
-        height:135px !important;
-        top:45px !important;
+        width:100%;
+
+        max-width:350px;
+
+        height:450px;
     }
 
     .profile-image{
-        width:135px !important;
-        height:135px !important;
-        top:45px !important;
-        left:50% !important;
-        border-radius:50% !important;
-        overflow:hidden !important;
-    }
 
-    .profile-image img{
-        width:100% !important;
-        height:100% !important;
-        object-fit:cover !important;
-        object-position:center center !important;
-        border-radius:50% !important;
+        width:220px;
+
+        height:220px;
     }
 
     section{
-        padding:75px 0 !important;
+
+        padding:75px 0;
     }
 
-    .about-text{
-        text-align:justify !important;
-        text-justify:inter-word !important;
+    .section-heading h2{
+
+        font-size:34px;
+    }
+
+    .achievements{
+
+        grid-template-columns:1fr;
+    }
+
+    .hr-values{
+
+        grid-template-columns:1fr;
     }
 
     .contact-box{
-        grid-template-columns:1fr !important;
+
+        padding:25px;
     }
+
+    .contact-box h2{
+
+        font-size:32px;
+    }
+
+    .timeline-item{
+
+        padding-left:48px;
+    }
+
+    .timeline::before{
+
+        left:12px;
+    }
+
+    .timeline-dot{
+
+        left:3px;
+    }
+
 }
 
-@media (max-width:520px){
 
-    .nav-inner{
-        padding:9px 6px !important;
-        gap:8px !important;
+
+/* =========================================================
+   FINAL PROFILE + MOBILE LAYOUT FIX
+========================================================= */
+
+.profile-area{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    position:relative;
+    transform:none;
+}
+
+.profile-card{
+    width:370px;
+    height:480px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+}
+
+/* Remove old profile decorations/content */
+.profile-card::before,
+.profile-card::after{
+    pointer-events:none;
+}
+
+.profile-image-wrap{
+    width:310px;
+    height:310px;
+    position:relative;
+    z-index:4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* THE PHOTO ITSELF IS THE CIRCLE */
+.profile-image{
+    width:300px;
+    height:300px;
+    margin:0;
+    padding:0;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+    z-index:5;
+    background:#fff;
+    border:6px solid transparent;
+    background:
+        linear-gradient(#fff,#fff) padding-box,
+        linear-gradient(135deg,var(--cyan),var(--blue),var(--violet),var(--pink)) border-box;
+    box-shadow:
+        0 0 25px rgba(0,234,255,.30),
+        0 0 65px rgba(135,76,255,.16);
+    animation:profileFloat 4s ease-in-out infinite;
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center center;
+    border:0;
+    border-radius:50%;
+}
+
+.profile-card:hover{
+    transform:translateY(-10px) rotateX(2deg) rotateY(-2deg);
+    border-color:var(--cyan);
+    box-shadow:
+        0 0 25px rgba(0,234,255,.20),
+        0 0 70px rgba(135,76,255,.14);
+}
+
+/* Keep hero content flush to the left */
+.hero-content{
+    min-width:0;
+}
+
+.hero-description{
+    width:100%;
+    max-width:650px;
+    text-align:left;
+}
+
+/* Mobile: keep navigation in ONE horizontal line */
+@media(max-width:650px){
+    .navbar{
+        position:relative;
+        width:100%;
     }
 
+    .nav-inner{
+        width:100%;
+        max-width:none;
+        min-height:62px;
+        padding:14px 14px;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:flex-start;
+        gap:18px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        scrollbar-width:none;
+    }
+
+    .nav-inner::-webkit-scrollbar{display:none;}
+
     .brand{
-        font-size:9px !important;
+        flex:0 0 auto;
+        font-size:12px;
     }
 
     .nav-links{
-        gap:13px !important;
+        flex:0 0 auto;
+        width:max-content;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        gap:20px;
+        list-style:none;
     }
 
+    .nav-links li{flex:0 0 auto;}
     .nav-links a{
-        font-size:7px !important;
+        font-size:9px;
+        white-space:nowrap;
     }
 
+    /* IMPORTANT: mobile hero stays LEFT + RIGHT */
     .hero{
-        grid-template-columns:minmax(0,1fr) 128px !important;
-        gap:9px !important;
-        padding:86px 8px 30px !important;
+        width:100%;
+        max-width:none;
+        min-height:auto;
+        padding:58px 12px 55px;
+        display:grid;
+        grid-template-columns:minmax(0,1fr) 150px;
+        align-items:center;
+        gap:14px;
+        text-align:left;
+        overflow:hidden;
+    }
+
+    .hero-content{
+        width:100%;
+        min-width:0;
+        margin:0;
+        text-align:left;
     }
 
     .hero-small{
-        font-size:5.8px !important;
-        letter-spacing:.55px !important;
+        font-size:7px;
+        letter-spacing:1.2px;
+        line-height:1.6;
+        margin-bottom:14px;
     }
 
     .hero h1{
-        font-size:clamp(24px,7.6vw,33px) !important;
+        font-size:clamp(22px,7vw,34px);
+        line-height:1.05;
+        letter-spacing:-1px;
+        white-space:normal;
+    }
+
+    .name-marquee{
+        width:100%;
+        margin-top:15px;
+        padding:9px 0;
+    }
+
+    .marquee-track span{
+        font-size:7px;
+        letter-spacing:1px;
     }
 
     .hero-description{
-        font-size:9.7px !important;
-        line-height:1.62 !important;
+        width:100%;
+        max-width:none;
+        margin:17px 0;
+        font-size:11px;
+        line-height:1.75;
+        text-align:left;
+        overflow-wrap:anywhere;
+    }
+
+    .hero-buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        width:100%;
+        gap:8px;
     }
 
     .hero-buttons .btn{
-        font-size:7.5px !important;
-        padding:7px 5px !important;
+        width:100%;
+        padding:10px 8px;
+        font-size:8px;
+        text-align:center;
+    }
+
+    .profile-area{
+        width:150px;
+        margin:0 !important;
+        padding:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        transform:none !important;
     }
 
     .profile-card{
-        max-width:128px !important;
-        height:220px !important;
+        width:150px;
+        height:260px;
+        max-width:none;
+        border-radius:20px;
+        display:flex;
+        align-items:flex-start;
+        justify-content:center;
     }
 
-    .profile-backdrop,
-    .profile-image{
-        width:108px !important;
-        height:108px !important;
-        top:40px !important;
+    .profile-image-wrap{
+        width:138px;
+        height:138px;
+        margin-top:38px;
     }
+
+    .profile-image{
+        width:132px;
+        height:132px;
+        border-width:4px;
+    }
+
+    section{padding:70px 0;}
+
+    .container{width:calc(100% - 24px);}
 }
 
-@media (max-width:390px){
-
-    .nav-links{
-        gap:11px !important;
-    }
-
-    .nav-links a{
-        font-size:6.7px !important;
-    }
-
+@media(max-width:390px){
     .hero{
-        grid-template-columns:minmax(0,1fr) 116px !important;
-        gap:7px !important;
-        padding-left:6px !important;
-        padding-right:6px !important;
+        grid-template-columns:minmax(0,1fr) 132px;
+        gap:10px;
+        padding-left:8px;
+        padding-right:8px;
     }
 
-    .hero h1{
-        font-size:23px !important;
-    }
-
-    .hero-description{
-        font-size:9.1px !important;
-        line-height:1.58 !important;
-    }
-
-    .profile-card{
-        max-width:116px !important;
-        height:200px !important;
-    }
-
-    .profile-backdrop,
-    .profile-image{
-        width:96px !important;
-        height:96px !important;
-        top:38px !important;
-    }
+    .profile-area,.profile-card{width:132px;}
+    .profile-card{height:245px;}
+    .profile-image-wrap{width:122px;height:122px;}
+    .profile-image{width:116px;height:116px;}
+    .hero-description{font-size:10px;}
+    .nav-links{gap:16px;}
 }
 
 </style>
@@ -2623,6 +2485,7 @@ EXPLORE PROFILE →
 <a
 href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
 target="_blank"
+rel="noopener noreferrer"
 class="btn">
 
 LINKEDIN ↗
@@ -2633,6 +2496,7 @@ LINKEDIN ↗
 <a
 href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
 target="_blank"
+rel="noopener noreferrer"
 class="btn">
 
 GITHUB ↗
@@ -2651,12 +2515,18 @@ GITHUB ↗
 ===================================================== -->
 
 <div class="profile-area reveal">
-    <div class="profile-card">
-        <div class="profile-backdrop"></div>
+
+
+<div class="profile-card">
+
+    <div class="profile-image-wrap">
         <div class="profile-image">
-            <img src="profile.jpg" alt="R. Janaga Priya" onerror="this.onerror=null;this.src='profile.png';">
+            <img src="./profile.jpg" alt="R. Janaga Priya">
         </div>
     </div>
+
+</div>
+
 </div>
 
 </header>
@@ -3991,6 +3861,7 @@ janagapriya290@gmail.com
 class="contact-link"
 href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
 target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="contact-icon">
@@ -4022,6 +3893,7 @@ R. Janaga Priya ↗
 class="contact-link"
 href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
 target="_blank"
+rel="noopener noreferrer"
 >
 
 <div class="contact-icon">
@@ -4184,60 +4056,7 @@ marqueeTrack.style.animationPlayState =
 
 
 
-/* =====================================================
-   PROFILE TILT
-===================================================== */
-
-const profile =
-document.querySelector(".profile-card");
-
-
-profile.addEventListener(
-"mousemove",
-(e) => {
-
-
-const rect =
-profile.getBoundingClientRect();
-
-
-const x =
-e.clientX - rect.left;
-
-
-const y =
-e.clientY - rect.top;
-
-
-const rotateX =
-((y / rect.height) - .5) * -5;
-
-
-const rotateY =
-((x / rect.width) - .5) * 5;
-
-
-profile.style.transform =
-
-`translateY(-10px)
- rotateX(${rotateX}deg)
- rotateY(${rotateY}deg)`;
-
-
-}
-);
-
-
-profile.addEventListener(
-"mouseleave",
-() => {
-
-profile.style.transform =
-"translateY(0) rotateX(0) rotateY(0)";
-
-}
-);
-
+/* PROFILE HOVER - handled by CSS */
 
 </script>
 
