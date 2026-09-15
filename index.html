@@ -539,7 +539,6 @@ a{
     align-items:center;
     position:relative;
     min-width:0;
-   align-left:-350px;
 }
 
 .profile-card{
@@ -2118,6 +2117,391 @@ footer strong{
     .profile-area.reveal{opacity:1 !important;transform:none !important;}
 }
 
+
+/* =========================================================
+   FINAL CLEAN RESPONSIVE OVERRIDE
+   Profile = image clipped perfectly inside the circle
+========================================================= */
+
+.profile-area{
+    display:flex !important;
+    justify-content:flex-end !important;
+    align-items:center !important;
+    position:relative !important;
+    min-width:0 !important;
+    margin:0 !important;
+    transform:none !important;
+    opacity:1 !important;
+}
+
+.profile-card{
+    width:370px !important;
+    height:480px !important;
+    position:relative !important;
+    overflow:hidden !important;
+    flex:0 0 auto !important;
+}
+
+.profile-backdrop{
+    position:absolute !important;
+    width:300px !important;
+    height:300px !important;
+    left:50% !important;
+    top:65px !important;
+    transform:translateX(-50%) !important;
+    border-radius:50% !important;
+    background:#fff !important;
+    z-index:1 !important;
+    opacity:1 !important;
+}
+
+.profile-image{
+    position:absolute !important;
+    width:300px !important;
+    height:300px !important;
+    left:50% !important;
+    top:65px !important;
+    bottom:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:translateX(-50%) !important;
+    border-radius:50% !important;
+    overflow:hidden !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    z-index:3 !important;
+    animation:none !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+.profile-image img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    border:0 !important;
+    border-radius:50% !important;
+    background:transparent !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+/* Keep the profile content minimal: photo + circular backdrop */
+.profile-top,
+.profile-info,
+.profile-bottom{
+    display:none !important;
+}
+
+/* ---------------------------------------------------------
+   MOBILE: content on left + profile on right
+--------------------------------------------------------- */
+
+@media (max-width:850px){
+
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+    }
+
+    .navbar{
+        position:fixed !important;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:1000;
+    }
+
+    .nav-inner{
+        width:100% !important;
+        min-height:58px !important;
+        padding:10px 8px !important;
+        display:flex !important;
+        flex-direction:row !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+        gap:10px !important;
+        overflow:hidden !important;
+    }
+
+    .brand{
+        flex:0 0 auto !important;
+        font-size:10px !important;
+    }
+
+    .nav-links{
+        flex:1 1 auto !important;
+        min-width:0 !important;
+        display:flex !important;
+        flex-direction:row !important;
+        flex-wrap:nowrap !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+        gap:15px !important;
+        overflow-x:auto !important;
+        overflow-y:hidden !important;
+        white-space:nowrap !important;
+        scrollbar-width:none !important;
+    }
+
+    .nav-links::-webkit-scrollbar{
+        display:none !important;
+    }
+
+    .nav-links a{
+        flex:0 0 auto !important;
+        white-space:nowrap !important;
+        font-size:7.5px !important;
+        letter-spacing:.3px !important;
+    }
+
+    .hero{
+        width:100% !important;
+        max-width:1180px !important;
+        min-height:100vh !important;
+        margin:0 auto !important;
+        padding:90px 12px 35px !important;
+        display:grid !important;
+        grid-template-columns:minmax(0,1fr) minmax(125px,155px) !important;
+        gap:14px !important;
+        align-items:center !important;
+        text-align:left !important;
+    }
+
+    .hero-content{
+        width:100% !important;
+        min-width:0 !important;
+        margin:0 !important;
+        padding:0 !important;
+        text-align:left !important;
+    }
+
+    .hero-content.reveal{
+        opacity:1 !important;
+        transform:none !important;
+    }
+
+    .hero-small{
+        font-size:6.5px !important;
+        letter-spacing:.8px !important;
+        line-height:1.5 !important;
+        margin-bottom:12px !important;
+    }
+
+    .hero h1{
+        width:100% !important;
+        margin:0 !important;
+        font-size:clamp(27px,7.8vw,40px) !important;
+        line-height:1.05 !important;
+        letter-spacing:-1.5px !important;
+        white-space:normal !important;
+    }
+
+    .name-marquee{
+        width:100% !important;
+        margin-top:15px !important;
+        padding:8px 0 !important;
+        overflow:hidden !important;
+    }
+
+    .marquee-track{
+        width:max-content !important;
+    }
+
+    .marquee-track span{
+        font-size:6px !important;
+        letter-spacing:.6px !important;
+        margin-right:55px !important;
+    }
+
+    .hero-description{
+        width:100% !important;
+        max-width:none !important;
+        margin:14px 0 16px !important;
+        font-size:10.5px !important;
+        line-height:1.65 !important;
+        text-align:left !important;
+        overflow-wrap:break-word !important;
+        word-break:normal !important;
+    }
+
+    .hero-buttons{
+        width:100% !important;
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        gap:7px !important;
+    }
+
+    .hero-buttons .btn{
+        width:100% !important;
+        padding:8px 7px !important;
+        font-size:8px !important;
+        text-align:center !important;
+    }
+
+    .profile-area{
+        width:100% !important;
+        min-width:0 !important;
+        display:flex !important;
+        justify-content:center !important;
+        align-items:center !important;
+        align-self:center !important;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    .profile-area.reveal{
+        opacity:1 !important;
+        transform:none !important;
+    }
+
+    .profile-card{
+        width:100% !important;
+        max-width:155px !important;
+        height:260px !important;
+        margin:0 !important;
+        border-radius:20px !important;
+        overflow:hidden !important;
+    }
+
+    .profile-backdrop{
+        width:135px !important;
+        height:135px !important;
+        top:45px !important;
+    }
+
+    .profile-image{
+        width:135px !important;
+        height:135px !important;
+        top:45px !important;
+        left:50% !important;
+        border-radius:50% !important;
+        overflow:hidden !important;
+    }
+
+    .profile-image img{
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+        object-position:center center !important;
+        border-radius:50% !important;
+    }
+
+    section{
+        padding:75px 0 !important;
+    }
+
+    .about-text{
+        text-align:justify !important;
+        text-justify:inter-word !important;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr !important;
+    }
+}
+
+@media (max-width:520px){
+
+    .nav-inner{
+        padding:9px 6px !important;
+        gap:8px !important;
+    }
+
+    .brand{
+        font-size:9px !important;
+    }
+
+    .nav-links{
+        gap:13px !important;
+    }
+
+    .nav-links a{
+        font-size:7px !important;
+    }
+
+    .hero{
+        grid-template-columns:minmax(0,1fr) 128px !important;
+        gap:9px !important;
+        padding:86px 8px 30px !important;
+    }
+
+    .hero-small{
+        font-size:5.8px !important;
+        letter-spacing:.55px !important;
+    }
+
+    .hero h1{
+        font-size:clamp(24px,7.6vw,33px) !important;
+    }
+
+    .hero-description{
+        font-size:9.7px !important;
+        line-height:1.62 !important;
+    }
+
+    .hero-buttons .btn{
+        font-size:7.5px !important;
+        padding:7px 5px !important;
+    }
+
+    .profile-card{
+        max-width:128px !important;
+        height:220px !important;
+    }
+
+    .profile-backdrop,
+    .profile-image{
+        width:108px !important;
+        height:108px !important;
+        top:40px !important;
+    }
+}
+
+@media (max-width:390px){
+
+    .nav-links{
+        gap:11px !important;
+    }
+
+    .nav-links a{
+        font-size:6.7px !important;
+    }
+
+    .hero{
+        grid-template-columns:minmax(0,1fr) 116px !important;
+        gap:7px !important;
+        padding-left:6px !important;
+        padding-right:6px !important;
+    }
+
+    .hero h1{
+        font-size:23px !important;
+    }
+
+    .hero-description{
+        font-size:9.1px !important;
+        line-height:1.58 !important;
+    }
+
+    .profile-card{
+        max-width:116px !important;
+        height:200px !important;
+    }
+
+    .profile-backdrop,
+    .profile-image{
+        width:96px !important;
+        height:96px !important;
+        top:38px !important;
+    }
+}
+
 </style>
 
 </head>
@@ -2270,7 +2654,7 @@ GITHUB ↗
     <div class="profile-card">
         <div class="profile-backdrop"></div>
         <div class="profile-image">
-            <img src="profile.jpg" alt="R. Janaga Priya" onerror="this.onerror=null;this.src='profile.jpg';">
+            <img src="profile.jpg" alt="R. Janaga Priya" onerror="this.onerror=null;this.src='profile.png';">
         </div>
     </div>
 </div>
