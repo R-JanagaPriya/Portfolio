@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>R. Janaga Priya | MCA | HR & Technology</title>
+<title>R. Janaga Priya | MCA | HR Technology Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -533,102 +533,318 @@ a{
    PROFILE
 ========================================================= */
 
-.profile-area{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    position:relative;
-    margin-left:-350px;
+.profile-area {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    transform: translateX(-25px);
 }
+
 
 .profile-card{
+
     width:370px;
+
     height:480px;
+
     border:1px solid rgba(0,234,255,.32);
+
     border-radius:25px;
-    background:linear-gradient(145deg,rgba(13,23,43,.95),rgba(4,7,15,.98));
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(13,23,43,.95),
+        rgba(4,7,15,.98)
+    );
+
     position:relative;
+
     overflow:hidden;
+
     transition:.45s;
-    box-shadow:0 0 30px rgba(0,234,255,.07),inset 0 0 45px rgba(135,76,255,.04);
+
+    box-shadow:
+
+        0 0 30px rgba(0,234,255,.07),
+
+        inset 0 0 45px rgba(135,76,255,.04);
 }
+
 
 .profile-card::before{
+
     content:"";
+
     position:absolute;
+
     width:240px;
+
     height:240px;
+
     border-radius:50%;
+
     background:var(--cyan);
+
     filter:blur(100px);
+
     opacity:.12;
+
     top:-100px;
+
     right:-80px;
-    pointer-events:none;
+
 }
+
 
 .profile-card::after{
+
     content:"";
+
     position:absolute;
+
     width:180px;
+
     height:180px;
+
     border-radius:50%;
+
     background:var(--violet);
+
     filter:blur(100px);
+
     opacity:.10;
+
     bottom:-80px;
+
     left:-70px;
-    pointer-events:none;
 }
+
 
 .profile-card:hover{
-    transform:translateY(-10px) rotateX(2deg) rotateY(-2deg);
+
+    transform:
+        translateY(-10px)
+        rotateX(2deg)
+        rotateY(-2deg);
+
     border-color:var(--cyan);
-    box-shadow:0 0 25px rgba(0,234,255,.2),0 0 70px rgba(135,76,255,.14);
+
+    box-shadow:
+
+        0 0 25px rgba(0,234,255,.2),
+
+        0 0 70px rgba(135,76,255,.14);
 }
 
-.profile-backdrop{
-    position:absolute;
-    width:300px;
-    height:300px;
-    top:65px;
-    left:50%;
-    transform:translateX(-50%);
-    border-radius:50%;
-    background:#f7f8fc;
-    box-shadow:0 0 30px rgba(0,234,255,.08);
-    z-index:1;
+
+.profile-top{
+
+    padding:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
 }
+
+
+.profile-tag{
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    color:var(--cyan);
+}
+
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    font-size:9px;
+
+    color:#a9b4c8;
+}
+
+
+.status-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#00ff9d;
+
+    box-shadow:0 0 12px #00ff9d;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
 
 .profile-image{
-    position:absolute;
-    width:300px;
-    height:300px;
-    top:65px;
-    left:50%;
-    transform:translateX(-50%);
+
+    width:245px;
+
+    height:245px;
+
+    margin:38px auto 22px;
+
+    padding:6px;
+
     border-radius:50%;
-    overflow:hidden;
-    z-index:2;
-    border:6px solid transparent;
-    background:linear-gradient(#050914,#050914) padding-box,linear-gradient(135deg,var(--cyan),var(--blue),var(--violet),var(--pink)) border-box;
-    box-shadow:0 0 25px rgba(0,234,255,.25),0 0 55px rgba(135,76,255,.12);
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--cyan),
+        var(--blue),
+        var(--violet),
+        var(--pink)
+    );
+
+    box-shadow:
+
+        0 0 25px rgba(0,234,255,.3),
+
+        0 0 60px rgba(135,76,255,.14);
+
     animation:profileFloat 4s ease-in-out infinite;
+
+    position:relative;
+
+    z-index:2;
 }
+
 
 .profile-image img{
+
     width:100%;
+
     height:100%;
-    display:block;
+
     object-fit:cover;
-    object-position:center center;
+
     border-radius:50%;
+
+    border:5px solid #050914;
 }
 
+
 @keyframes profileFloat{
-    0%,100%{transform:translateX(-50%) translateY(0);}
-    50%{transform:translateX(-50%) translateY(-8px);}
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
 }
+
+
+.profile-info{
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.profile-info h2{
+
+    font-family:var(--font-title);
+
+    font-size:23px;
+}
+
+
+.profile-info p{
+
+    color:var(--cyan);
+
+    font-family:var(--font-tech);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-top:7px;
+}
+
+
+.profile-bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    border-top:1px solid var(--line);
+
+    background:rgba(0,0,0,.25);
+
+    z-index:3;
+}
+
+
+.profile-stat{
+
+    text-align:center;
+}
+
+
+.profile-stat strong{
+
+    font-family:var(--font-tech);
+
+    font-size:15px;
+
+    color:white;
+}
+
+
+.profile-stat small{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#77849b;
+
+    font-size:8px;
+}
+
 
 /* =========================================================
    SECTION
@@ -1726,285 +1942,342 @@ footer strong{
 @media(max-width:1000px){
 
     .hero{
-        grid-template-columns:1fr;
-        gap:45px;
-        text-align:left;
-        min-height:auto;
-        padding-top:105px;
-    }
 
-    .hero-content{
-        width:100%;
-        min-width:0;
+        grid-template-columns:1fr;
+
+        text-align:center;
     }
 
     .hero-description{
-        margin-left:0;
-        margin-right:0;
+
+        margin-left:auto;
+
+        margin-right:auto;
     }
 
     .hero-buttons{
-        justify-content:flex-start;
+
+        justify-content:center;
     }
 
     .profile-area{
-        width:100%;
-        justify-content:center;
-        margin-top:10px;
+
+        margin-top:30px;
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        gap:14px;
+    }
+
+    .nav-links a{
+
+        font-size:10px;
     }
 
     .about-grid,
     .skills-layout,
     .hr-grid,
-    .contact-box,
+    .contact-box{
+
+        grid-template-columns:1fr;
+    }
+
     .projects-grid{
+
         grid-template-columns:1fr;
     }
 
     .achievements{
+
         grid-template-columns:repeat(2,1fr);
     }
+
 }
+
 
 @media(max-width:650px){
 
-    html,body{
-        width:100%;
-        max-width:100%;
-        overflow-x:hidden;
-    }
-
     .navbar{
+
         position:relative;
     }
 
     .nav-inner{
-        width:100%;
-        max-width:100%;
-        min-height:64px;
-        padding:14px 10px;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
-        justify-content:flex-start;
+
+        padding:18px 0;
+
+        flex-direction:column;
+
         gap:15px;
     }
 
-    .brand{
-        flex:0 0 auto;
-        font-size:14px;
-    }
-
     .nav-links{
-        flex:1 1 auto;
-        min-width:0;
-        display:flex;
-        flex-wrap:nowrap;
-        justify-content:flex-start;
-        gap:18px;
-        overflow-x:auto;
-        overflow-y:hidden;
-        white-space:nowrap;
-        scrollbar-width:none;
-        -ms-overflow-style:none;
-        padding-bottom:2px;
-    }
 
-    .nav-links::-webkit-scrollbar{
-        display:none;
-    }
+        flex-wrap:wrap;
 
-    .nav-links li{
-        flex:0 0 auto;
-    }
+        justify-content:center;
 
-    .nav-links a{
-        font-size:9px;
-        white-space:nowrap;
+        gap:12px 18px;
     }
 
     .hero{
-        width:calc(100% - 28px);
-        max-width:none;
-        min-height:auto;
-        margin:0 auto;
-        padding:58px 0 55px;
-        display:flex;
-        flex-direction:column;
-        align-items:stretch;
-        gap:28px;
-        text-align:left;
-        overflow:visible;
-    }
 
-    .hero-content{
-        width:100%;
-        max-width:none;
-    }
-
-    .hero-small{
-        width:100%;
-        margin-bottom:18px;
-        font-size:7px;
-        letter-spacing:1.35px;
-        line-height:1.2;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:clip;
+        padding-top:80px;
     }
 
     .hero h1{
-        width:100%;
-        font-size:clamp(30px,9.4vw,40px);
-        line-height:1.05;
-        letter-spacing:-1.7px;
-        white-space:nowrap;
-        overflow:visible;
-    }
 
-    .name-marquee{
-        width:100%;
-        max-width:none;
-        margin-top:22px;
-        padding:11px 0;
-        overflow:hidden;
-    }
+        font-size:38px;
 
-    .marquee-track{
-        display:flex;
-        width:max-content;
-        flex-wrap:nowrap;
-        animation:quoteMove 14s linear infinite;
-        will-change:transform;
-    }
+        letter-spacing:-2px;
 
-    .marquee-track span{
-        flex:0 0 auto;
-        font-size:8px;
-        letter-spacing:1.25px;
-        margin-right:70px;
-        white-space:nowrap;
-    }
-
-    .hero-description{
-        width:100%;
-        max-width:none;
-        margin:22px 0;
-        font-size:14px;
-        line-height:1.8;
-        text-align:left;
-        overflow-wrap:normal;
-        word-break:normal;
-        hyphens:none;
-    }
-
-    .hero-buttons{
-        width:100%;
-        display:grid;
-        grid-template-columns:1fr;
-        gap:10px;
-        justify-content:stretch;
-    }
-
-    .hero-buttons .btn{
-        width:100%;
-        text-align:center;
-    }
-
-    .profile-area{
-        width:100%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        margin:8px 0 0;
-        transform:none !important;
-        opacity:1;
-    }
-
-    .profile-area.reveal{
-        opacity:1;
-        transform:none;
+        white-space:normal;
     }
 
     .profile-card{
-        width:min(100%,330px);
-        height:420px;
-        margin:0 auto;
+
+        width:100%;
+
+        max-width:350px;
+
+        height:450px;
     }
 
-    .profile-backdrop,
     .profile-image{
-        width:270px;
-        height:270px;
-        top:58px;
-    }
 
-    .profile-image img{
-        object-fit:cover;
-        object-position:center center;
+        width:220px;
+
+        height:220px;
     }
 
     section{
-        width:100%;
-        padding:72px 0;
+
+        padding:75px 0;
     }
 
     .section-heading h2{
-        font-size:32px;
+
+        font-size:34px;
     }
 
-    .achievements,
+    .achievements{
+
+        grid-template-columns:1fr;
+    }
+
     .hr-values{
+
         grid-template-columns:1fr;
     }
 
     .contact-box{
-        padding:24px;
+
+        padding:25px;
     }
 
     .contact-box h2{
-        font-size:31px;
+
+        font-size:32px;
     }
 
     .timeline-item{
+
         padding-left:48px;
     }
 
     .timeline::before{
+
         left:12px;
     }
 
     .timeline-dot{
+
         left:3px;
     }
+
 }
 
-@media(max-width:370px){
-    .hero{
-        width:calc(100% - 22px);
-    }
 
-    .hero-small{
-        font-size:6.5px;
-        letter-spacing:1.05px;
-    }
 
-    .hero h1{
-        font-size:28px;
-    }
 
-    .profile-card{
-        width:300px;
-        max-width:100%;
-    }
+/* =========================================================
+   PORTFOLIO 2.0 — UNIQUE PROFILE / SKILL MAP / PROJECT VISUALS
+========================================================= */
 
-    .profile-backdrop,
-    .profile-image{
-        width:245px;
-        height:245px;
-    }
+/* Hero alignment + resume button */
+.hero-content{min-width:0;}
+.btn-resume{border-color:rgba(225,76,255,.45);}
+
+/* Unique profile orbit card */
+.profile-orbit-card{overflow:hidden;isolation:isolate;min-height:480px;}
+.profile-grid-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 46%,rgba(0,234,255,.10),transparent 32%),radial-gradient(circle at 20% 80%,rgba(135,76,255,.08),transparent 35%);pointer-events:none;}
+.orbit-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.65;}
+.orbit-lines ellipse,.orbit-lines path{fill:none;stroke:rgba(0,234,255,.20);stroke-width:1;}
+.orbit-lines circle{fill:var(--cyan);filter:drop-shadow(0 0 6px rgba(0,234,255,.8));}
+.profile-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;z-index:3;}
+.profile-photo-ring{width:210px;height:210px;padding:5px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue),var(--violet),var(--pink));box-shadow:0 0 24px rgba(0,234,255,.24),0 0 50px rgba(135,76,255,.16);}
+.profile-photo-ring img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%;border:4px solid #071020;background:#08111f;}
+.profile-core-label{margin-top:15px;font-family:var(--font-tech);font-size:8px;letter-spacing:2px;color:var(--cyan);}
+.profile-core-role{margin-top:6px;font-size:10px;color:#aebad0;letter-spacing:1.2px;}
+.orbit-badge{position:absolute;z-index:4;padding:8px 11px;border-radius:999px;background:rgba(4,10,22,.82);border:1px solid rgba(0,234,255,.26);box-shadow:0 0 15px rgba(0,234,255,.08);font-family:var(--font-tech);font-size:8px;letter-spacing:.7px;backdrop-filter:blur(8px);animation:badgeFloat 5s ease-in-out infinite;}
+.orbit-badge::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);vertical-align:middle;}
+.badge-python{left:22px;top:104px;animation-delay:-1s;}.badge-people{right:20px;top:116px;animation-delay:-2.5s;}.badge-web{left:26px;bottom:94px;animation-delay:-3.3s;}.badge-data{right:22px;bottom:84px;animation-delay:-4s;}
+@keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+
+/* Unique Skill Pathway */
+.skill-matrix-wrap{margin-top:12px;}
+.skill-matrix{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    padding:24px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:linear-gradient(145deg,rgba(9,16,31,.95),rgba(4,8,16,.98));
+    box-shadow:inset 0 0 60px rgba(0,234,255,.02);
+}
+.skill-lane{
+    position:relative;
+    padding:22px;
+    min-height:220px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(5,10,20,.78);
+    overflow:hidden;
+    transition:.35s;
+}
+.skill-lane:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,234,255,.38);
+    box-shadow:0 0 25px rgba(0,234,255,.10),0 0 40px rgba(135,76,255,.06);
+}
+.skill-lane::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:rgba(0,234,255,.08);
+    filter:blur(45px);
+    right:-35px;
+    top:-35px;
+}
+.lane-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    position:relative;
+    z-index:1;
+}
+.lane-kicker{
+    color:var(--cyan);
+    font-family:var(--font-tech);
+    font-size:8px;
+    letter-spacing:2px;
+}
+.lane-flow{
+    color:#65748c;
+    font-family:var(--font-tech);
+    font-size:8px;
+    letter-spacing:1px;
+}
+.skill-lane h3{
+    margin:16px 0 14px;
+    font-family:var(--font-title);
+    font-size:20px;
+    position:relative;
+    z-index:1;
+}
+.skill-chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    position:relative;
+    z-index:1;
+}
+.skill-chip{
+    padding:9px 11px;
+    border:1px solid rgba(0,234,255,.16);
+    border-radius:999px;
+    background:rgba(0,234,255,.04);
+    color:#dce5f3;
+    font-size:10px;
+    transition:.3s;
+}
+.skill-chip:hover{
+    border-color:var(--cyan);
+    box-shadow:0 0 14px rgba(0,234,255,.12);
+    transform:translateY(-2px);
+}
+.chain-arrow{
+    color:var(--violet);
+    font-family:var(--font-tech);
+    font-size:11px;
+}
+.lane-note{
+    margin-top:18px;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.6;
+    position:relative;
+    z-index:1;
+}
+.skill-summary{
+    margin-top:16px;
+    padding:16px 18px;
+    border:1px dashed rgba(0,234,255,.18);
+    border-radius:14px;
+    text-align:center;
+    color:#9ca9bd;
+    font-size:11px;
+    background:rgba(0,234,255,.025);
 }
 
+/* Achievement metric strip */
+.achievement-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.metric-card{padding:22px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,rgba(9,16,30,.9),rgba(5,8,16,.98));text-align:center}.metric-number{display:block;font-family:var(--font-tech);font-size:32px;color:var(--cyan);text-shadow:0 0 14px rgba(0,234,255,.25)}.metric-label{display:block;font-family:var(--font-title);font-weight:700;font-size:12px;letter-spacing:1.5px;margin-top:5px}.metric-card small{display:block;color:#738097;font-size:9px;margin-top:7px;line-height:1.5}
+
+/* Connect */
+.connect-section{display:grid;grid-template-columns:1fr .9fr;gap:30px;padding:34px;border:1px solid rgba(0,234,255,.20);border-radius:20px;background:radial-gradient(circle at 90% 10%,rgba(135,76,255,.14),transparent 28%),#080d18}.connect-intro h2{font-family:var(--font-title);font-size:42px;line-height:1.02}.connect-intro h2 span{color:var(--cyan)}.connect-intro p{color:var(--muted);max-width:580px;line-height:1.8;margin:18px 0 22px}.connect-details{display:grid;gap:10px;margin-bottom:22px}.connect-details a{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;transition:.3s}.connect-details a:hover{transform:translateX(5px);border-color:var(--cyan);box-shadow:0 0 15px rgba(0,234,255,.10)}.detail-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:8px;background:rgba(0,234,255,.06);color:var(--cyan);font-family:var(--font-tech);font-size:9px}.connect-details small{display:block;color:#718098;font-size:8px;letter-spacing:1px}.connect-details strong{display:block;font-size:12px;margin-top:3px}.connect-form{padding:24px;border:1px solid var(--line);border-radius:16px;background:rgba(5,9,17,.72);display:grid;gap:13px}.form-heading span{display:block;color:var(--cyan);font-family:var(--font-tech);font-size:9px;letter-spacing:2px}.form-heading small{display:block;color:#718098;margin-top:5px;font-size:10px}.connect-form label{font-size:11px;color:#a9b4c8}.connect-form input,.connect-form textarea{width:100%;margin-top:6px;padding:12px 13px;border-radius:9px;border:1px solid rgba(255,255,255,.10);outline:none;background:#070d19;color:white;font-family:inherit;font-size:12px;resize:vertical}.connect-form input:focus,.connect-form textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,234,255,.05)}.form-note{color:#627086;font-size:9px!important;line-height:1.5!important;margin:0!important}
+
+@media(max-width:1000px){
+    .profile-area{transform:none;justify-content:center;margin-top:20px;}
+    .hero{grid-template-columns:1fr;gap:35px;}
+}
+
+@media(max-width:650px){
+    .nav-inner{overflow:hidden;display:block;padding:16px 0;}
+    .brand{display:inline-block;margin-bottom:13px;}
+    .nav-links{display:flex;flex-wrap:nowrap;gap:18px;overflow-x:auto;overflow-y:hidden;padding:3px 2px 7px;scrollbar-width:none;-webkit-overflow-scrolling:touch;white-space:nowrap;}
+    .nav-links::-webkit-scrollbar{display:none;}
+    .nav-links li{flex:0 0 auto;}
+    .nav-links a{font-size:9px;}
+    .hero{padding-top:42px;gap:28px;text-align:left;align-items:stretch;}
+    .hero-small{font-size:8px;letter-spacing:1.2px;white-space:nowrap;overflow:visible;}
+    .hero h1{font-size:clamp(34px,10vw,46px);white-space:normal;}
+    .name-marquee{width:100%;overflow:hidden;}
+    .marquee-track span{font-size:9px;}
+    .hero-description{text-align:left;font-size:13px;line-height:1.8;max-width:none;}
+    .hero-buttons{width:100%;}
+    .hero-buttons .btn{width:100%;}
+    .profile-area{justify-content:center;margin-top:0;}
+    .profile-orbit-card{width:min(100%,360px);height:420px;min-height:420px;}
+    .profile-photo-ring{width:185px;height:185px;}
+    .orbit-badge{font-size:7px;padding:7px 9px;}
+    .badge-python{left:15px;top:75px}.badge-people{right:12px;top:88px}.badge-web{left:15px;bottom:75px}.badge-data{right:13px;bottom:64px}
+    .skill-matrix{grid-template-columns:1fr;padding:16px;}
+    .skill-lane{min-height:auto;}
+    .achievement-metrics{grid-template-columns:1fr;}
+    .connect-section{grid-template-columns:1fr;padding:22px;gap:22px}.connect-intro h2{font-size:34px}.connect-form{padding:18px}
+}
 
 </style>
 
@@ -2135,7 +2408,7 @@ LINKEDIN ↗
 
 
 <a
-href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
+href="https://github.com/R-JanagaPriya"
 target="_blank"
 class="btn">
 
@@ -2153,24 +2426,39 @@ GITHUB ↗
 <!-- =====================================================
      PROFILE CARD
 ===================================================== -->
-
 <div class="profile-area reveal">
 
+<div class="profile-card profile-orbit-card">
 
-<div class="profile-card">
+    <div class="profile-grid-glow"></div>
 
-<div class="profile-backdrop"></div>
+    <svg class="orbit-lines" viewBox="0 0 440 480" aria-hidden="true">
+        <ellipse cx="220" cy="245" rx="185" ry="150"></ellipse>
+        <ellipse cx="220" cy="245" rx="150" ry="115"></ellipse>
+        <ellipse cx="220" cy="245" rx="105" ry="80"></ellipse>
+        <path d="M50 245 Q220 90 390 245 Q220 400 50 245Z"></path>
+        <circle cx="65" cy="208" r="4"></circle>
+        <circle cx="374" cy="178" r="4"></circle>
+        <circle cx="340" cy="338" r="4"></circle>
+        <circle cx="95" cy="344" r="4"></circle>
+    </svg>
 
-<div class="profile-image">
+    <div class="profile-core">
+        <div class="profile-photo-ring">
+            <img src="./1000201185.jpg" alt="R. Janaga Priya" onerror="this.onerror=null;this.src='./profile.png';">
+        </div>
+        <div class="profile-core-label">JANAGA // PROFILE</div>
+        <div class="profile-core-role">MCA • HR • TECHNOLOGY</div>
+    </div>
 
-<img src="./1000201185.jpg" alt="R. Janaga Priya">
+    <div class="orbit-badge badge-python"><span class="badge-dot"></span>Python</div>
+    <div class="orbit-badge badge-people"><span class="badge-dot"></span>People</div>
+    <div class="orbit-badge badge-web"><span class="badge-dot"></span>Web</div>
+    <div class="orbit-badge badge-data"><span class="badge-dot"></span>SQL</div>
 
 </div>
 
 </div>
-
-</div>
-
 </header>
 
 
@@ -2610,112 +2898,66 @@ A focused combination of technical, HR-oriented and productivity skills.
 </div>
 
 
-<div class="skills-layout">
 
+<div class="skill-matrix-wrap reveal">
 
-<!-- TECHNICAL -->
+    <div class="skill-matrix">
 
-<div class="glass-card skill-group reveal">
+        <div class="skill-lane">
+            <div class="lane-head">
+                <span class="lane-kicker">TECHNICAL PATH</span>
+                <span class="lane-flow">01</span>
+            </div>
+            <h3>Data & Automation</h3>
+            <div class="skill-chain">
+                <span class="skill-chip">Python</span>
+                <span class="chain-arrow">→</span>
+                <span class="skill-chip">SQL</span>
+                <span class="chain-arrow">→</span>
+                <span class="skill-chip">Data Handling</span>
+            </div>
+            <p class="lane-note">Programming connects with databases and structured data for automation, querying and analysis.</p>
+        </div>
 
-<h3>
+        <div class="skill-lane">
+            <div class="lane-head">
+                <span class="lane-kicker">WEB PATH</span>
+                <span class="lane-flow">02</span>
+            </div>
+            <h3>Web Development</h3>
+            <div class="skill-chain">
+                <span class="skill-chip">HTML</span>
+                <span class="chain-arrow">+</span>
+                <span class="skill-chip">CSS</span>
+                <span class="chain-arrow">→</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="chain-arrow">→</span>
+                <span class="skill-chip">Bootstrap</span>
+            </div>
+            <p class="lane-note">Structure, styling, interaction and responsive design combine to create complete web experiences.</p>
+        </div>
 
-Technical Skills
+        <div class="skill-lane">
+            <div class="lane-head">
+                <span class="lane-kicker">PEOPLE PATH</span>
+                <span class="lane-flow">03</span>
+            </div>
+            <h3>HR & Productivity</h3>
+            <div class="skill-chain">
+                <span class="skill-chip">Communication</span>
+                <span class="chain-arrow">+</span>
+                <span class="skill-chip">Leadership</span>
+                <span class="chain-arrow">→</span>
+                <span class="skill-chip">Problem Solving</span>
+            </div>
+            <p class="lane-note">People skills, decision making and office tools support practical HR coordination and productivity.</p>
+        </div>
 
-</h3>
+    </div>
 
-
-<div class="skill-cloud">
-
-<div class="skill tech">Python</div>
-
-<div class="skill tech">C Programming</div>
-
-<div class="skill tech">HTML</div>
-
-<div class="skill tech">CSS</div>
-
-<div class="skill tech">JavaScript</div>
-
-<div class="skill tech">PHP</div>
-
-<div class="skill tech">SQL</div>
-
-<div class="skill tech">Bootstrap</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- HR -->
-
-<div class="glass-card skill-group reveal">
-
-<h3>
-
-Soft Skills
-
-</h3>
-
-
-<div class="skill-cloud">
-
-<div class="skill hr">Communication</div>
-
-<div class="skill hr">Active Listening</div>
-
-<div class="skill hr">Leadership</div>
-
-<div class="skill hr">Team Coordination</div>
-
-<div class="skill hr">Employee Interaction</div>
-
-<div class="skill hr">Problem Solving</div>
-
-<div class="skill hr">Decision Making</div>
-
-<div class="skill hr">Conflict Resolution</div>
-
-<div class="skill hr">Adaptability</div>
-
-<div class="skill hr">Time Management</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- TOOLS -->
-
-<div class="glass-card skill-group reveal">
-
-<h3>
-
-Office Automation
-</h3>
-
-
-<div class="skill-cloud">
-
-<div class="skill tool">MS Word</div>
-
-<div class="skill tool">MS Excel</div>
-
-<div class="skill tool">MS PowerPoint</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
+    <div class="skill-summary">
+        <strong>HR × TECHNOLOGY</strong> — connecting technical skills, people skills and productivity tools into one professional skillset.
+    </div>
 
 </div>
 
@@ -2755,288 +2997,59 @@ Projects demonstrating technical implementation, innovation and problem solving.
 </div>
 
 
+
 <div class="projects-grid">
 
-
-<!-- WORKWATCH -->
-
-<div class="project reveal">
-
-
-<div class="project-number">
-
-PROJECT // 01
-
-</div>
-
-
-<h3>
-
-WorkWatch
-
-</h3>
-
-
-<span class="project-status current">
-
-CURRENTLY WORKING
-
-</span>
-
-
-<p>
-
-A privacy-preserving digital workplace productivity management
-system designed to track working-time patterns while maintaining
-employee privacy.
-
-The concept includes employee and HR portals, workplace
-verification, entry and exit tracking, usage-category analytics
-and productivity alerts.
-
-</p>
-
-
-<div class="project-footer">
-
-<span class="tech-pill">HTML</span>
-
-<span class="tech-pill">CSS</span>
-
-<span class="tech-pill">Python</span>
-
-<span class="tech-pill">SQL</span>
-
-<span class="tech-pill">HR Technology</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- RESQORA -->
-
-<div class="project reveal">
-
-
-<div class="project-number">
-
-PROJECT // 02
-
-</div>
-
-
-<h3>
-
-ResQora
-
-</h3>
-
-
-<span class="project-status completed">
-
-PROJECT DEVELOPMENT
-
-</span>
-
-
-<p>
-
-AI-powered smart safety monitoring and emergency response system
-concept designed for incident detection, emergency alerts,
-environmental monitoring, GPS localization and centralized
-dashboard management.
-
-</p>
-
-
-<div class="project-footer">
-
-<span class="tech-pill">AI</span>
-
-<span class="tech-pill">Computer Vision</span>
-
-<span class="tech-pill">IoT</span>
-
-<span class="tech-pill">Emergency Response</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- INTELLIPOLE -->
-
-<div class="project reveal">
-
-
-<div class="project-number">
-
-PROJECT // 03
-
-</div>
-
-
-<h3>
-
-Intellipole Sentinel
-
-</h3>
-
-
-<span class="project-status completed">
-
-ACADEMIC PROJECT
-
-</span>
-
-
-<p>
-
-AI-powered smart safety and emergency response system integrating
-intelligent monitoring, incident detection, environmental sensing
-and automated emergency notifications.
-
-</p>
-
-
-<div class="project-footer">
-
-<span class="tech-pill">AI</span>
-
-<span class="tech-pill">IoT</span>
-
-<span class="tech-pill">Safety Monitoring</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- NOMAD -->
-
-<div class="project reveal">
-
-
-<div class="project-number">
-
-PROJECT // 04
-
-</div>
-
-
-<h3>
-
-Nomad Noshery
-
-</h3>
-
-
-<span class="project-status completed">
-
-INNOVATION PROJECT
-
-</span>
-
-
-<p>
-
-IoT-based smart food truck concept integrating digital menus,
-mobility, safety monitoring, fire detection, obstacle avoidance,
-water-level monitoring and automated features.
-
-</p>
-
-
-<div class="project-footer">
-
-<span class="tech-pill">IoT</span>
-
-<span class="tech-pill">Automation</span>
-
-<span class="tech-pill">Smart Systems</span>
-
-</div>
-
-
-</div>
-
-
-
-<!-- PERFUME WEBSITE -->
-
-<div class="project reveal">
-
-
-<div class="project-number">
-
-PROJECT // 05
-
-</div>
-
-
-<h3>
-
-Signature Scents
-
-</h3>
-
-
-<span class="project-status completed">
-
-WEB DEVELOPMENT PROJECT
-
-</span>
-
-
-<p>
-
-A responsive perfume e-commerce website developed during my
-web development learning and internship journey. The project
-focuses on modern UI design, product presentation, responsive
-layouts, navigation, interactive sections and user-friendly
-web experiences.
-
-</p>
-
-
-<div class="project-footer">
-
-<span class="tech-pill">HTML</span>
-
-<span class="tech-pill">CSS</span>
-
-<span class="tech-pill">JavaScript</span>
-
-<span class="tech-pill">Bootstrap</span>
-
-</div>
-
-
-<a
-href="https://github.com/R-JanagaPriya/Perfume_Website"
-target="_blank"
-class="project-link">
-
-VIEW GITHUB PROJECT ↗
-
-</a>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
+    <article class="project reveal">
+        <div class="project-number">PROJECT // 01</div>
+        <h3>WorkWatch</h3>
+        <span class="project-status current">CURRENTLY WORKING</span>
+        <p>A privacy-preserving digital workplace productivity management system with employee and HR portals, entry/exit tracking, usage-category analytics and productivity alerts.</p>
+        <div class="project-footer"><span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">Python</span><span class="tech-pill">SQL</span><span class="tech-pill">HR Technology</span></div>
+    </article>
+
+    <article class="project reveal">
+        <div class="project-number">PROJECT // 02</div>
+        <h3>ResQora</h3>
+        <span class="project-status completed">PROJECT DEVELOPMENT</span>
+        <p>AI-powered smart safety monitoring and emergency response system concept for incident detection, emergency alerts, environmental monitoring, GPS localization and centralized dashboards.</p>
+        <div class="project-footer"><span class="tech-pill">AI</span><span class="tech-pill">Computer Vision</span><span class="tech-pill">IoT</span><span class="tech-pill">Emergency Response</span></div>
+    </article>
+
+    <article class="project reveal">
+        <div class="project-number">PROJECT // 03</div>
+        <h3>Intellipole Sentinel</h3>
+        <span class="project-status completed">ACADEMIC PROJECT</span>
+        <p>AI-powered smart safety and emergency response system integrating intelligent monitoring, incident detection, environmental sensing and automated emergency notifications.</p>
+        <div class="project-footer"><span class="tech-pill">AI</span><span class="tech-pill">IoT</span><span class="tech-pill">Safety Monitoring</span></div>
+    </article>
+
+    <article class="project reveal">
+        <div class="project-number">PROJECT // 04</div>
+        <h3>Nomad Noshery</h3>
+        <span class="project-status completed">INNOVATION PROJECT</span>
+        <p>IoT-based smart food truck concept combining digital menus, mobility, safety monitoring, fire detection, obstacle avoidance, water-level monitoring and automation.</p>
+        <div class="project-footer"><span class="tech-pill">IoT</span><span class="tech-pill">Automation</span><span class="tech-pill">Smart Systems</span></div>
+    </article>
+
+    <article class="project reveal">
+        <div class="project-number">PROJECT // 05</div>
+        <h3>Signature Scents</h3>
+        <span class="project-status completed">WEB DEVELOPMENT PROJECT</span>
+        <p>A responsive perfume e-commerce website developed during my web-development learning and internship journey with modern UI, product presentation, navigation and interactive sections.</p>
+        <div class="project-footer"><span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Bootstrap</span></div>
+        <a href="https://github.com/R-JanagaPriya/Perfume_Website" target="_blank" rel="noopener noreferrer" class="project-link">VIEW GITHUB PROJECT ↗</a>
+    </article>
+
+    <article class="project reveal">
+        <div class="project-number">PROJECT // 06</div>
+        <h3>SQL Query Generation</h3>
+        <span class="project-status completed">DATABASE PROJECT</span>
+        <p>A SQL-focused project exploring query construction, filtering, joins, aggregation and structured database operations for efficient data retrieval and analysis.</p>
+        <div class="project-footer"><span class="tech-pill">SQL</span><span class="tech-pill">Database</span><span class="tech-pill">Query Logic</span></div>
+    </article>
+
+</div></section>
 
 
 
@@ -3415,6 +3428,25 @@ Short Film Winner and Stress Interview Winner.</strong>
 
 </div>
 
+<div class="achievement-metrics">
+    <div class="metric-card reveal">
+        <span class="metric-number">4+</span>
+        <span class="metric-label">CERTIFICATIONS</span>
+        <small>Update the count as you add more credentials</small>
+    </div>
+    <div class="metric-card reveal">
+        <span class="metric-number">6+</span>
+        <span class="metric-label">WORKSHOPS</span>
+        <small>Technical, career and professional learning sessions</small>
+    </div>
+    <div class="metric-card reveal">
+        <span class="metric-number">5+</span>
+        <span class="metric-label">PROJECTS</span>
+        <small>Academic, innovation and web-development work</small>
+    </div>
+</div>
+
+
 </section>
 
 
@@ -3425,142 +3457,31 @@ Short Film Winner and Stress Interview Winner.</strong>
 
 <section id="contact">
 
-
 <div class="container">
 
-
-<div class="contact-box reveal">
-
-
-<div>
-
-
-<div class="section-number">
-
-08 // CONTACT
-
-</div>
-
-
-<h2>
-
-LET'S BUILD<br>
-
-<span>WHAT'S NEXT.</span>
-
-</h2>
-
-
-<p>
-
-Open to internships, opportunities, collaborations and professional
-experiences where technology, people and organizational growth
-come together.
-
-</p>
-
-
-</div>
-
-
-
-<div class="contact-links">
-
-
-<!-- EMAIL -->
-
-<a
-class="contact-link"
-href="mailto:janagapriya290@gmail.com"
->
-
-<div class="contact-icon">
-
-@
-
-</div>
-
-
-<div>
-
-<small>EMAIL</small>
-
-<span>
-
-janagapriya290@gmail.com
-
-</span>
-
-</div>
-
-</a>
-
-
-
-<!-- LINKEDIN -->
-
-<a
-class="contact-link"
-href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/"
-target="_blank"
->
-
-<div class="contact-icon">
-
-in
-
-</div>
-
-
-<div>
-
-<small>LINKEDIN</small>
-
-<span>
-
-R. Janaga Priya ↗
-
-</span>
-
-</div>
-
-</a>
-
-
-
-<!-- GITHUB -->
-
-<a
-class="contact-link"
-href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com"
-target="_blank"
->
-
-<div class="contact-icon">
-
-GH
-
-</div>
-
-
-<div>
-
-<small>GITHUB</small>
-
-<span>
-
-R-JanagaPriya ↗
-
-</span>
-
-</div>
-
-</a>
-
-
-</div>
-
-
+<div class="connect-section reveal">
+    <div class="connect-intro">
+        <div class="section-number">08 // LET'S CONNECT</div>
+        <h2>LET'S BUILD<br><span>WHAT'S NEXT.</span></h2>
+        <p>Have an opportunity, collaboration, internship or simply want to connect? Send a message and let's start a conversation.</p>
+
+        <div class="connect-details">
+            <a href="mailto:janagapriya290@gmail.com"><span class="detail-icon">@</span><div><small>EMAIL</small><strong>janagapriya290@gmail.com</strong></div></a>
+            <a href="https://www.linkedin.com/in/r-janaga-priya-15bb53323/" target="_blank" rel="noopener noreferrer"><span class="detail-icon">in</span><div><small>LINKEDIN</small><strong>R. Janaga Priya ↗</strong></div></a>
+            <a href="https://github.com/R-JanagaPriya/jans_webdesigning.github.com" target="_blank" rel="noopener noreferrer"><span class="detail-icon">GH</span><div><small>GITHUB</small><strong>Portfolio Repository ↗</strong></div></a>
+        </div>
+
+        <a href="resume.pdf" download class="btn btn-primary connect-resume">DOWNLOAD RESUME ↓</a>
+    </div>
+
+    <form class="connect-form" id="connectForm">
+        <div class="form-heading"><span>MESSAGE MODULE</span><small>I'll receive your message through email.</small></div>
+        <label>Name<input type="text" id="senderName" required placeholder="Your name"></label>
+        <label>Email<input type="email" id="senderEmail" required placeholder="yourname@example.com"></label>
+        <label>Message<textarea id="senderMessage" required rows="6" placeholder="Write your message here..."></textarea></label>
+        <button type="submit" class="btn btn-primary">SEND MESSAGE ↗</button>
+        <p class="form-note">Submitting opens your email app with the message prepared.</p>
+    </form>
 </div>
 
 </div>
@@ -3704,11 +3625,9 @@ const profile =
 document.querySelector(".profile-card");
 
 
-profile.addEventListener(
+if(profile){ profile.addEventListener(
 "mousemove",
 (e) => {
-
-if (window.innerWidth <= 650) return;
 
 
 const rect =
@@ -3750,8 +3669,24 @@ profile.style.transform =
 "translateY(0) rotateX(0) rotateY(0)";
 
 }
-);
+);}
 
+
+/* =====================================================
+   CONNECT FORM — EMAIL MESSAGE
+===================================================== */
+const connectForm = document.getElementById("connectForm");
+if(connectForm){
+    connectForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        const name = document.getElementById("senderName").value.trim();
+        const email = document.getElementById("senderEmail").value.trim();
+        const message = document.getElementById("senderMessage").value.trim();
+        const subject = encodeURIComponent(`Portfolio message from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:janagapriya290@gmail.com?subject=${subject}&body=${body}`;
+    });
+}
 
 </script>
 
